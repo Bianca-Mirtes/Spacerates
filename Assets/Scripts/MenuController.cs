@@ -10,6 +10,9 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
     public Button play;
+    public GameObject configPainel;
+    public Slider volume;
+    public TextMeshProUGUI volumeTxt;
 
     public Color corDeSelecao;
     public Color corDeDesabilitado;
@@ -21,6 +24,7 @@ public class MenuController : MonoBehaviour
     {
         if(EventSystem.current.currentSelectedGameObject == null)
             EventSystem.current.SetSelectedGameObject(play.gameObject);
+        configPainel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -41,6 +45,9 @@ public class MenuController : MonoBehaviour
                 btnText.color = corDeDesabilitado;
             }
 
+            if (EventSystem.current.currentSelectedGameObject.name == "ConfigVoltar")
+                volumeTxt.color = corDeDesabilitado;
+
             btnSelected = EventSystem.current.currentSelectedGameObject;
             TextMeshProUGUI texto = btnSelected.GetComponentInChildren<TextMeshProUGUI>();
             texto.color = corDeSelecao;
@@ -48,6 +55,7 @@ public class MenuController : MonoBehaviour
         }
         if(currentObj == null)
             EventSystem.current.SetSelectedGameObject(btnSelected);
+        
     }
 
     public void hover(GameObject btn){
