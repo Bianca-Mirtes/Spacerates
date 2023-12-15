@@ -14,10 +14,6 @@ public class PlayerController : MonoBehaviour
     public GameObject laser2;
 
     public float speed = 3;
-    public Sprite up;
-    public Sprite right;
-    public Sprite down;
-    public Sprite left;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,25 +50,21 @@ public class PlayerController : MonoBehaviour
         {
             Flip(0);
             statusPlayer = "right";
-            gameObject.GetComponent<SpriteRenderer>().sprite = right;
         }
         if (horizontal < 0)
         {
             //Flip(1);
             statusPlayer = "left";
-            gameObject.GetComponent<SpriteRenderer>().sprite = left;
         }
         if (vertical > 0)
         {
             Flip(2);
             statusPlayer = "up";
-            gameObject.GetComponent<SpriteRenderer>().sprite = up;
         }
         if(vertical < 0)
         {
             //Flip(3);
             statusPlayer = "down";
-            gameObject.GetComponent<SpriteRenderer>().sprite = down;
 
         }
     }
