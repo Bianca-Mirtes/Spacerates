@@ -792,7 +792,7 @@ MonoBehaviour:
   asteroids:
   - {fileID: 241709417751221008, guid: 9927959b2635d4f409e0e5de95c77d9f, type: 3}
   - {fileID: 2869936171926116570, guid: a2e34626a9219b748ae43164c08eb47c, type: 3}
-  totalPares: 70
+  totalDeAsteroides: 70
   distanceBetween: 2
 --- !u!1 &427742795
 GameObject:
@@ -3273,7 +3273,7 @@ MonoBehaviour:
   asteroids:
   - {fileID: 241709417751221008, guid: 9927959b2635d4f409e0e5de95c77d9f, type: 3}
   - {fileID: 2869936171926116570, guid: a2e34626a9219b748ae43164c08eb47c, type: 3}
-  totalPares: 50
+  totalDeAsteroides: 50
   distanceBetween: 2
 --- !u!1 &1235401883
 GameObject:

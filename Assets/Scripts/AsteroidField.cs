@@ -7,8 +7,8 @@ public class AsteroidField : MonoBehaviour
 {
     public GameObject container;
     public GameObject[] asteroids;
-    public int totalDeAsteroides = 50;
-    public int distanceBetween = 3;
+    public int totalDeAsteroides = 70;
+    public int distanceBetween = 2;
 
     // Start is called before the first frame update
     void Start()
