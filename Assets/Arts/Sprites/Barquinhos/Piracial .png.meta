@@ -113,10 +113,10 @@ TextureImporter:
       name: Piracial _0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 484
-        width: 86
-        height: 87
+        x: 0
+        y: 450
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: Piracial _1
       rect:
         serializedVersion: 2
-        x: 172
-        y: 484
-        width: 89
-        height: 87
+        x: 150
+        y: 450
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: Piracial _2
       rect:
         serializedVersion: 2
-        x: 322
-        y: 484
-        width: 97
-        height: 87
+        x: 300
+        y: 450
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,10 +176,10 @@ TextureImporter:
       name: Piracial _3
       rect:
         serializedVersion: 2
-        x: 472
-        y: 484
-        width: 101
-        height: 87
+        x: 450
+        y: 450
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: Piracial _4
       rect:
         serializedVersion: 2
-        x: 22
-        y: 334
-        width: 110
-        height: 87
+        x: 0
+        y: 300
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,10 +218,10 @@ TextureImporter:
       name: Piracial _5
       rect:
         serializedVersion: 2
-        x: 172
-        y: 334
-        width: 109
-        height: 87
+        x: 150
+        y: 300
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,10 +239,10 @@ TextureImporter:
       name: Piracial _6
       rect:
         serializedVersion: 2
-        x: 322
-        y: 334
-        width: 109
-        height: 87
+        x: 300
+        y: 300
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,10 +260,10 @@ TextureImporter:
       name: Piracial _7
       rect:
         serializedVersion: 2
-        x: 472
-        y: 334
-        width: 110
-        height: 87
+        x: 450
+        y: 300
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,10 +281,10 @@ TextureImporter:
       name: Piracial _8
       rect:
         serializedVersion: 2
-        x: 22
-        y: 184
-        width: 105
-        height: 87
+        x: 0
+        y: 150
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,10 +302,10 @@ TextureImporter:
       name: Piracial _9
       rect:
         serializedVersion: 2
-        x: 172
-        y: 184
-        width: 105
-        height: 87
+        x: 150
+        y: 150
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,10 +323,10 @@ TextureImporter:
       name: Piracial _10
       rect:
         serializedVersion: 2
-        x: 322
-        y: 184
-        width: 102
-        height: 87
+        x: 300
+        y: 150
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,10 +344,10 @@ TextureImporter:
       name: Piracial _11
       rect:
         serializedVersion: 2
-        x: 472
-        y: 184
-        width: 109
-        height: 87
+        x: 450
+        y: 150
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,10 +365,10 @@ TextureImporter:
       name: Piracial _12
       rect:
         serializedVersion: 2
-        x: 22
-        y: 34
-        width: 110
-        height: 87
+        x: 0
+        y: 0
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,10 +386,10 @@ TextureImporter:
       name: Piracial _13
       rect:
         serializedVersion: 2
-        x: 172
-        y: 34
-        width: 110
-        height: 87
+        x: 150
+        y: 0
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -407,10 +407,10 @@ TextureImporter:
       name: Piracial _14
       rect:
         serializedVersion: 2
-        x: 322
-        y: 34
-        width: 102
-        height: 87
+        x: 300
+        y: 0
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,10 +428,10 @@ TextureImporter:
       name: Piracial _15
       rect:
         serializedVersion: 2
-        x: 472
-        y: 34
-        width: 105
-        height: 87
+        x: 450
+        y: 0
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
