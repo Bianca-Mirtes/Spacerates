@@ -28,7 +28,7 @@ public class AttackController : MonoBehaviour
         else
         {
             causesDamage = false;
-            Destroy(gameObject);
+            Destroy(colliderLaser.gameObject);
         }
         return causesDamage;
     }

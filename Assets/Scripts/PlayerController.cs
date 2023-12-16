@@ -6,18 +6,60 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Input input;
-    private string statusPlayer = null;
+    private string statusPlayer = "right";
+    private float timeBetween = 3f;
+    private Animator ani;
+    private bool canAttack = true;
+
+    private int life = 100;
+    private int xpPlayer = 0;
+
+    public GameObject localSpawn1;
+    public GameObject localSpawn2;
+    public GameObject localSpawn3;
+    public GameObject localSpawn4;
 
     private float rayAttack = 4f;
     private GameObject attackController;
     public GameObject laser1;
-    public GameObject laser2;
 
     public float speed = 3;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        ani = GetComponent<Animator>();
+    }
+
+    private void verifTimeForAttack()
+    {
+        if (timeBetween <= 0)
+        {
+            canAttack = true;
+            timeBetween = 2f;
+        }
+        else
+        {
+            timeBetween -= Time.deltaTime;
+        }
+    }
+    public int getLife()
+    {
+        return life;
+    }
+
+    public void setLife(int value)
+    {
+        life -= value;
+    }
+    public int getXP()
+    {
+        return xpPlayer;
+    }
+
+    public void setXP(int value)
+    {
+        xpPlayer += value;
     }
 
     private void Awake()
@@ -48,25 +90,39 @@ public class PlayerController : MonoBehaviour
 
         if(horizontal> 0)
         {
+            ani.SetBool("walking1", true);
             Flip(0);
             statusPlayer = "right";
         }
         if (horizontal < 0)
         {
-            //Flip(1);
+            ani.SetBool("walking1", true);
+            Flip(1);
             statusPlayer = "left";
         }
         if (vertical > 0)
         {
-            Flip(2);
+            //ani.SetBool("walking2", true);
+            //Flip(2);
             statusPlayer = "up";
         }
         if(vertical < 0)
         {
+            //ani.SetBool("walking2", true);
             //Flip(3);
             statusPlayer = "down";
 
         }
+        if(horizontal == 0 && vertical == 0)
+        {
+            ani.SetBool("walking1",false);
+            //ani.SetBool("walking2", false);
+        }
+    }
+
+    public string getStatus()
+    {
+        return statusPlayer;
     }
     private void Flip(int isFliped)
     {
@@ -86,27 +142,36 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         verifAttack();
+        verifTimeForAttack();
     }
 
     private void verifAttack()
     {
-        if (input.Player.Attack.IsPressed())
+        if (canAttack)
         {
-            if (statusPlayer.Equals("right"))
-            {
-                GameObject clone = Instantiate(laser1, transform.GetChild(0).position, Quaternion.identity);
-                clone.GetComponent<ConstantForce2D>().relativeForce = new Vector2(2, 0f);
-            }else if (statusPlayer.Equals("left"))
-            {
-                GameObject clone = Instantiate(laser1, transform.GetChild(2).position, Quaternion.identity);
-            }else if (statusPlayer.Equals("up"))
-            {
-                GameObject clone = Instantiate(laser2, transform.GetChild(3).position, Quaternion.identity);
-                clone.GetComponent<ConstantForce2D>().relativeForce = new Vector2(0f, 2f);
-            }
-            else if (statusPlayer.Equals("down"))
-            {
-                GameObject clone = Instantiate(laser2, transform.GetChild(1).position, Quaternion.identity);
+             if (input.Player.Attack.IsPressed())
+             {
+                if (statusPlayer.Equals("right"))
+                {
+                    GameObject clone = Instantiate(laser1, localSpawn1.transform.position, localSpawn1.transform.rotation);
+                    clone.GetComponent<LaserController>().setDirection(0);
+                }else if (statusPlayer.Equals("left"))
+                {
+                    GameObject clone = Instantiate(laser1, localSpawn2.transform.position, localSpawn1.transform.rotation);
+                    clone.GetComponent<LaserController>().setDirection(1);
+                }
+                else if (statusPlayer.Equals("up"))
+                {
+                    GameObject clone = Instantiate(laser1, localSpawn3.transform.position, localSpawn3.transform.rotation);
+                    clone.GetComponent<LaserController>().setDirection(2);
+                    clone.transform.Rotate(new Vector3(0f, 0f, 90f));
+                }
+                else if (statusPlayer.Equals("down"))
+                {
+                    GameObject clone = Instantiate(laser1, localSpawn4.transform.position, localSpawn4.transform.rotation);
+                    clone.GetComponent<LaserController>().setDirection(3);
+                }
+                canAttack = false;
             }
         }
     }
