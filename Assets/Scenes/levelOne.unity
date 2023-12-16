@@ -893,57 +893,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386204513}
   m_CullTransparentMesh: 1
---- !u!1 &408590299
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 408590300}
-  - component: {fileID: 408590301}
-  m_Layer: 0
-  m_Name: AsteroidsField
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &408590300
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408590299}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0541754, y: -2.7130895, z: -0.23638338}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1229991786}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &408590301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408590299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7f2ccc50341cb2489e65fac377b373a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  container: {fileID: 408590299}
-  asteroids:
-  - {fileID: 241709417751221008, guid: 9927959b2635d4f409e0e5de95c77d9f, type: 3}
-  - {fileID: 2869936171926116570, guid: a2e34626a9219b748ae43164c08eb47c, type: 3}
-  totalDeAsteroides: 70
-  distanceBetween: 2
 --- !u!1 &427742795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,6 +1468,56 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 593884690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &577963517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 577963519}
+  - component: {fileID: 577963518}
+  m_Layer: 0
+  m_Name: AsteroidsField
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &577963518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577963517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f2ccc50341cb2489e65fac377b373a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  container: {fileID: 577963517}
+  asteroids:
+  - {fileID: 241709417751221008, guid: 9927959b2635d4f409e0e5de95c77d9f, type: 3}
+  - {fileID: 2869936171926116570, guid: a2e34626a9219b748ae43164c08eb47c, type: 3}
+  totalDeAsteroides: 70
+  distanceBetween: 2
+--- !u!4 &577963519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577963517}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4, y: -2.7, z: -0.23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &592188422
 GameObject:
@@ -7652,3 +7651,6 @@ SceneRoots:
   - {fileID: 805871960}
   - {fileID: 894395016}
   - {fileID: 1358073355}
+  - {fileID: 4700688775203407608}
+  - {fileID: 2101410072946059540}
+  - {fileID: 577963519}
