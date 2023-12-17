@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using System.Xml.XPath;
+using TMPro;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -10,9 +12,26 @@ public class GameController : MonoBehaviour
     private Transform player;
     private int danoPlayer = 20;
 
+    private int countPurple = 0;
+    private int countGreen = 0;
+    private int countBlue = 0;
+    private int countPink = 0;
+
+    private static GameController intance = null;
+
     // Start is called before the first frame update
     void Start()
     {
+        if(intance == null)
+        {
+            intance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(pvpOn());
     }
@@ -32,6 +51,26 @@ public class GameController : MonoBehaviour
     public void computeAttackEnemy(int dano)
     {
         player.GetComponent<PlayerController>().setLife(dano);
+    }
+
+    public void updateJewels(string joia)
+    {
+        if (joia.Equals("Ágata"))
+        {
+            HUDController.addGema(1);
+        }
+        if (joia.Equals("Ametista"))
+        {
+            HUDController.addGema(2);
+        }
+        if (joia.Equals("Diamante"))
+        {
+            HUDController.addGema(3);  
+        }
+        if (joia.Equals("Esmeralda"))
+        {
+            HUDController.addGema(4);
+        }
     }
 
 

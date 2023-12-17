@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Input input;
     private string statusPlayer = "right";
-    private float timeBetween = 3f;
+    private float timeBetween = 2f;
     private Animator ani;
     private bool canAttack = true;
 
@@ -172,6 +172,28 @@ public class PlayerController : MonoBehaviour
                     clone.GetComponent<LaserController>().setDirection(3);
                 }
                 canAttack = false;
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            FindObjectOfType<GameController>().computeAttackEnemy(20);
+            Destroy(collision.gameObject);
+            //Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+        {
+            if (input.Player.Coleta.IsPressed())
+            {
+                //som de coleta
+                FindObjectOfType<GameController>().updateJewels(collision.gameObject.name);
+                Destroy(collision.gameObject);
             }
         }
     }

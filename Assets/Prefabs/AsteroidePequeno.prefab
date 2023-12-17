@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5638511348092922873}
   - component: {fileID: 7527409424234691400}
   - component: {fileID: 306323543738002801}
+  - component: {fileID: -2316309328926662928}
   m_Layer: 0
   m_Name: AsteroidePequeno
   m_TagString: Untagged
@@ -124,6 +125,41 @@ MonoBehaviour:
   gema2: {fileID: 888150813008737574}
   gema3: {fileID: 1736689999150855462}
   gema4: {fileID: 1482383016634252717}
+--- !u!58 &-2316309328926662928
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241709417751221008}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5625
 --- !u!1 &552611813329013698
 GameObject:
   m_ObjectHideFlags: 0
