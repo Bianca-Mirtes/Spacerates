@@ -4,10 +4,14 @@ using System.Threading;
 using System.Xml.XPath;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GameController : MonoBehaviour
 {
     public HUDController HUDController;
+    public GameObject background;
+    public AudioClip backgroundSound;
+
     private float segundosParaPVP = 10.0f;
     private Transform player;
     private int danoPlayer = 20;
@@ -32,6 +36,7 @@ public class GameController : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
+        background.GetComponent<AudioSource>().PlayOneShot(backgroundSound);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(pvpOn());
     }

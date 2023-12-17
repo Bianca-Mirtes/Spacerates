@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour
 
     public Transform[] destinyRandow;
     private int AIPointCurrent;
+    private Animator ani;
 
     private bool followSomething, teste;
     private Vector3 localSpawn1;
@@ -36,6 +37,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ani = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         AIPointCurrent = Random.Range(0, destinyRandow.Length);
         Instantiate(spawner, new Vector3(transform.position.x + 0.3f, transform.position.y - 0.2f, transform.position.z), Quaternion.identity);
@@ -60,6 +62,7 @@ public class EnemyController : MonoBehaviour
         }
         if (distanceForPlayer <= distanceFollow) // para verificar se o inimigo pode seguir o player
         {
+            ani.SetBool("walking1", true);
             Follow();
             followSomething = true;
         }
@@ -109,6 +112,7 @@ public class EnemyController : MonoBehaviour
 
     void Walking()
     {
+        ani.SetBool("walking1", false);
         if (!followSomething)
         {
             transform.position = Vector3.MoveTowards(transform.position, destinyRandow[AIPointCurrent].transform.position, 0.8f * Time.deltaTime);
