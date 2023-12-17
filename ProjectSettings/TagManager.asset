@@ -10,11 +10,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Laser
+  - LaserBlue
   - Water
   - UI
-  - 
-  - 
+  - LaserRed
+  - collectibles
   - 
   - 
   - 

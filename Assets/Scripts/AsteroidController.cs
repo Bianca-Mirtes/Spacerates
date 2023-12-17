@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class AsteroidController : MonoBehaviour
@@ -9,6 +10,8 @@ public class AsteroidController : MonoBehaviour
     public GameObject gema3;
     public GameObject gema4;
 
+    private Animator ani;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +19,17 @@ public class AsteroidController : MonoBehaviour
         gema2.SetActive(false);
         gema3.SetActive(false);
         gema4.SetActive(false);
+
+        ani = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (ani.GetBool("isDestroying"))
+        {
+            Destroy(GetComponent<Collider2D>());
+        }
     }
 
     public void setRarityAsteroid()
@@ -63,6 +71,15 @@ public class AsteroidController : MonoBehaviour
         else
         {
             gema4.SetActive(true);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == 3)
+        {
+            ani.SetBool("isDestroying", true);
+            Destroy(collision.gameObject);
         }
     }
 }
