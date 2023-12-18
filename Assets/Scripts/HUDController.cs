@@ -27,17 +27,11 @@ public class HUDController : MonoBehaviour
     public Sprite fill1;
     public Sprite fill2;
 
-    private int agataQtdd = 0;
-    private int ametistaQtdd = 0;
-    private int diamanteQtdd = 0;
-    private int esmeraldaQtdd = 0;
-
     private int nivelAtual = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        atualizaQtddGemas();
         setLife(100);
         setNivel(nivelAtual);
 
@@ -46,7 +40,7 @@ public class HUDController : MonoBehaviour
         //velocidadeAtual.text = "Velocidade: 0";
     }
 
-    private void atualizaQtddGemas()
+    public void atualizaQtddGemas(int agataQtdd, int ametistaQtdd, int diamanteQtdd, int esmeraldaQtdd)
     {
         agata.text = "" + agataQtdd;
         ametista.text = "" + ametistaQtdd;
@@ -97,28 +91,6 @@ public class HUDController : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void addGema(int gema)
-    {
-        int peso = 0;
-        if (gema == 1)
-        {
-            agataQtdd++;
-        }
-        else if(gema == 2)
-        {
-            ametistaQtdd++;
-        }
-        else if (gema == 3)
-        {
-            diamanteQtdd++;
-        }
-        else if (gema == 4)
-        {
-            esmeraldaQtdd++;
-        }
-        atualizaQtddGemas();
     }
 
     public void pvpOn()

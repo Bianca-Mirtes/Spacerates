@@ -63,45 +63,36 @@ public class GameController : MonoBehaviour
 
     public void updateJewels(string joia)
     {
+        PlayerController playerController = player.GetComponent<PlayerController>();
         if (joia.Equals("Ágata"))
         {
-            HUDController.addGema(1);
-            player.GetComponent<PlayerController>().setCargaAtual(10);
-            player.GetComponent<PlayerController>().setXP(10);
+            playerController.addGema(1);
+            playerController.setCargaAtual(10);
+            playerController.setXP(10);
         }
         if (joia.Equals("Ametista"))
         {
-            HUDController.addGema(2);
-            player.GetComponent<PlayerController>().setCargaAtual(15);
-            player.GetComponent<PlayerController>().setXP(15);
+            playerController.addGema(2);
+            playerController.setCargaAtual(15);
+            playerController.setXP(15);
         }
         if (joia.Equals("Diamante"))
         {
-            HUDController.addGema(3);
-            player.GetComponent<PlayerController>().setCargaAtual(20);
-            player.GetComponent<PlayerController>().setXP(20);
+            playerController.addGema(3);
+            playerController.setCargaAtual(20);
+            playerController.setXP(20);
         }
         if (joia.Equals("Esmeralda"))
         {
-            HUDController.addGema(4);
-            player.GetComponent<PlayerController>().setCargaAtual(25);
-            player.GetComponent<PlayerController>().setXP(25);
+            playerController.addGema(4);
+            playerController.setCargaAtual(25);
+            playerController.setXP(25);
         }
-    }
-
-    public void setVidaHud(int life)
-    {
-        HUDController.setLife(life);
     }
 
     public void nextLvl()
     {
         HUDController.nextLvl();
-    }
-
-    public void changeSpeed(float speed)
-    {
-        HUDController.changeSpeed(speed);
     }
 
     public void changeCargaBar(float atual, float total)

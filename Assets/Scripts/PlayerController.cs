@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public HUDController HUDController;
+
     private Rigidbody2D rb;
     private Input input;
     private string statusPlayer = "right";
@@ -32,6 +34,11 @@ public class PlayerController : MonoBehaviour
     private int carga = 200;
     private int cargaAtual = 0;
     private bool coletaEnable = true;
+
+    private int agataQtdd = 0;
+    private int ametistaQtdd = 0;
+    private int diamanteQtdd = 0;
+    private int esmeraldaQtdd = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +46,8 @@ public class PlayerController : MonoBehaviour
         ani = GetComponent<Animator>();
 
         speedReference = speed;
-        FindObjectOfType<GameController>().changeSpeed(speed);
+        HUDController.changeSpeed(speed);
+        HUDController.atualizaQtddGemas(agataQtdd, ametistaQtdd, diamanteQtdd, esmeraldaQtdd);
         setCarga(carga);
     }
 
@@ -63,7 +71,7 @@ public class PlayerController : MonoBehaviour
     public void setLife(int value)
     {
         life -= value;
-        FindObjectOfType<GameController>().setVidaHud(life);
+        HUDController.setLife(life);
     }
     public int getXP()
     {
@@ -185,9 +193,32 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x, resetY, transform.localScale.z);
             ani.speed = 0; //Desliga os motores rsrs
             changeCollider(0);
+            if(statusPlayer == "up" || statusPlayer == "down")
+                statusPlayer = "right";
         }
         else
             ani.speed = 1;
+    }
+
+    public void addGema(int gema)
+    {
+        if (gema == 1)
+        {
+            agataQtdd++;
+        }
+        else if (gema == 2)
+        {
+            ametistaQtdd++;
+        }
+        else if (gema == 3)
+        {
+            diamanteQtdd++;
+        }
+        else if (gema == 4)
+        {
+            esmeraldaQtdd++;
+        }
+        HUDController.atualizaQtddGemas(agataQtdd, ametistaQtdd, diamanteQtdd, esmeraldaQtdd);
     }
 
     public string getStatus()
@@ -241,7 +272,7 @@ public class PlayerController : MonoBehaviour
             if (speed == speedReference)
             {
                 speed = speed / 2;
-                FindObjectOfType<GameController>().changeSpeed(speed);
+                HUDController.changeSpeed(speed);
                 coletaEnable = false;
             }
                 
@@ -249,7 +280,7 @@ public class PlayerController : MonoBehaviour
         else if (speed != speedReference)
         {
             speed = speedReference;
-            FindObjectOfType<GameController>().changeSpeed(speed);
+            HUDController.changeSpeed(speed);
             coletaEnable = true;
         }
     }
