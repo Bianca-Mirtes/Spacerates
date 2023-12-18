@@ -8,6 +8,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public HUDController HUDController;
+    public CosmicDustController cosmicDustController;
     private float segundosParaPVP = 10.0f;
     private Transform player;
     private int danoPlayer = 20;
@@ -76,6 +77,18 @@ public class GameController : MonoBehaviour
     public void setVidaHud(int life)
     {
         HUDController.setLife(life);
+    }
+
+    public void enableCosmicDust()
+    {
+        cosmicDustController.enableCosmicDust();
+        //desativar radar!
+    }
+
+    public void disableCosmicDust()
+    {
+        cosmicDustController.disableCosmicDust();
+        //reativar radar!
     }
 
     IEnumerator pvpOn()

@@ -244,6 +244,19 @@ public class PlayerController : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
+        if (collision.gameObject.layer == 8)
+        {
+            //som de po
+            FindObjectOfType<GameController>().enableCosmicDust();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 8)
+        {
+            FindObjectOfType<GameController>().disableCosmicDust();
+        }
     }
 
     private void OnDrawGizmos()
