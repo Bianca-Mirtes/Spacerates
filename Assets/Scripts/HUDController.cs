@@ -12,8 +12,10 @@ public class HUDController : MonoBehaviour
     public TextMeshProUGUI diamante;
     public TextMeshProUGUI esmeralda;
 
+    public TextMeshProUGUI vida;
     public TextMeshProUGUI carga;
 
+    public TextMeshProUGUI nivel;
     public TextMeshProUGUI durabilidadeAtual;
     public TextMeshProUGUI ataqueAtual;
     public TextMeshProUGUI velocidadeAtual;
@@ -29,11 +31,14 @@ public class HUDController : MonoBehaviour
 
     private int cargaTotal = 200;
     private int cargaAtual = 0;
+    private int nivelAtual = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         atualizaQtddGemas();
+        setLife(100);
+        setNivel(nivelAtual);
 
         carga.text = "0/"+ cargaTotal;
 
@@ -48,6 +53,16 @@ public class HUDController : MonoBehaviour
         ametista.text = "" + ametistaQtdd;
         diamante.text = "" + diamanteQtdd;
         esmeralda.text = "" + esmeraldaQtdd;
+    }
+
+    public void setLife(int life)
+    {
+        vida.text = life + "/100";
+    }
+
+    private void setNivel(int lvl)
+    {
+        nivel.text = ""+ lvl;
     }
 
     public void setCargaTotal(int cargaTotal)

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7527409424234691400}
   - component: {fileID: 306323543738002801}
   - component: {fileID: -2316309328926662928}
+  - component: {fileID: 8037609682623085369}
   m_Layer: 0
   m_Name: AsteroidePequeno
   m_TagString: Untagged
@@ -157,9 +158,36 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.13, y: 0.16}
   serializedVersion: 2
-  m_Radius: 1.5625
+  m_Radius: 0.63
+--- !u!50 &8037609682623085369
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241709417751221008}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &552611813329013698
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3914242957955936421}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GemasRecurso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +233,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6039581507587172646}
   - component: {fileID: 6468875901225855808}
-  m_Layer: 0
+  - component: {fileID: 912020761703473511}
+  m_Layer: 7
   m_Name: Amestista
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,6 +308,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &912020761703473511
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888150813008737574}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.1875, y: 2.1875}
+    newSize: {x: 2.1875, y: 2.1875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.40625, y: 0.65625}
+      - {x: -0.6875, y: 0.375}
+      - {x: -0.6875, y: -0.1875}
+      - {x: -0.40625, y: -0.46875}
+      - {x: 0.25, y: -0.46875}
+      - {x: 0.53125, y: -0.1875}
+      - {x: 0.53125, y: 0.34375}
+      - {x: 0.21875, y: 0.65625}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1482383016634252717
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +371,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2841808384627066834}
   - component: {fileID: 5918441860364630911}
-  m_Layer: 0
+  - component: {fileID: 7791514336377296699}
+  m_Layer: 7
   m_Name: Esmeralda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,6 +446,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &7791514336377296699
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482383016634252717}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.1875, y: 2.1875}
+    newSize: {x: 2.1875, y: 2.1875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.3125, y: 0.75}
+      - {x: -0.65625, y: 0.625}
+      - {x: -0.65625, y: -0.40625}
+      - {x: -0.3125, y: -0.75}
+      - {x: 0.5, y: -0.75}
+      - {x: 0.59375, y: -0.46875}
+      - {x: 0.59375, y: 0.75}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1736689999150855462
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +508,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4427516990880916283}
   - component: {fileID: 1263882608086537371}
-  m_Layer: 0
+  - component: {fileID: 554049203353210741}
+  m_Layer: 7
   m_Name: Diamante
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -447,6 +583,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &554049203353210741
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736689999150855462}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.1875, y: 2.1875}
+    newSize: {x: 2.1875, y: 2.1875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.125, y: 0.65625}
+      - {x: -0.65625, y: 0.125}
+      - {x: -0.65625, y: 0.0625}
+      - {x: 0.125, y: -0.71875}
+      - {x: 0.15625, y: -0.71875}
+      - {x: 0.9375, y: 0.0625}
+      - {x: 0.9375, y: 0.125}
+      - {x: 0.40625, y: 0.65625}
+  m_UseDelaunayMesh: 0
 --- !u!1 &6921724177068813939
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +646,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1239586670984358616}
   - component: {fileID: 8031765291033848977}
-  m_Layer: 0
+  - component: {fileID: 9084778937516259743}
+  m_Layer: 7
   m_Name: "\xC1gata"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,3 +721,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &9084778937516259743
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921724177068813939}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.1875, y: 2.1875}
+    newSize: {x: 2.1875, y: 2.1875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.5, y: 0.71875}
+      - {x: -0.8125, y: 0.71875}
+      - {x: -0.84375, y: 0.59375}
+      - {x: -0.84375, y: -0.46875}
+      - {x: -0.4375, y: -0.59375}
+      - {x: 0.71875, y: -0.59375}
+      - {x: 0.84375, y: -0.34375}
+      - {x: 0.84375, y: 0.46875}
+      - {x: 0.8125, y: 0.59375}
+  m_UseDelaunayMesh: 0

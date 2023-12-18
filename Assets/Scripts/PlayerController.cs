@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
     public void setLife(int value)
     {
         life -= value;
+        FindObjectOfType<GameController>().setVidaHud(life);
     }
     public int getXP()
     {

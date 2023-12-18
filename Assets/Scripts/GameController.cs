@@ -73,6 +73,10 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void setVidaHud(int life)
+    {
+        HUDController.setLife(life);
+    }
 
     IEnumerator pvpOn()
     {
