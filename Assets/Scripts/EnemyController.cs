@@ -50,9 +50,9 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         status = opcoes[Random.Range(0, 4)];
+        UpdatePositionSpawners();
         verifAttack();
         verifTimeForAttack();
-        UpdatePositionSpawners();
         distanceForPlayer = Vector3.Distance(player.transform.position, transform.position);
         distanceForAIPoint = Vector3.Distance(destinyRandow[AIPointCurrent].transform.position, transform.position);
 

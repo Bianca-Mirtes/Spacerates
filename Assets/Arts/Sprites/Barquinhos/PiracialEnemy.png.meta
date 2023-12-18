@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 48d921e1878506449a46adbf7128d810
+=======
+guid: b5c2dc599d4f540459f1f60ae7835d3f
+>>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +38,11 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< HEAD
     filterMode: 0
+=======
+    filterMode: 1
+>>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +51,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,6 +120,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
+<<<<<<< HEAD
     sprites:
     - serializedVersion: 2
       name: PiracialEnemy_0
@@ -445,6 +458,9 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+=======
+    sprites: []
+>>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
     outline: []
     physicsShape: []
     bones: []
@@ -455,6 +471,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+<<<<<<< HEAD
     nameFileIdTable:
       PiracialEnemy_0: 348097596
       PiracialEnemy_1: -344974376
@@ -472,6 +489,9 @@ TextureImporter:
       PiracialEnemy_7: -1058461842
       PiracialEnemy_8: 289827031
       PiracialEnemy_9: 1796046026
+=======
+    nameFileIdTable: {}
+>>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

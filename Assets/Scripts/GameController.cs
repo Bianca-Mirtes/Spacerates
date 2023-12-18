@@ -9,9 +9,13 @@ using UnityEngine.UIElements;
 public class GameController : MonoBehaviour
 {
     public HUDController HUDController;
+<<<<<<< HEAD
     public GameObject background;
     public AudioClip backgroundSound;
 
+=======
+    public CosmicDustController cosmicDustController;
+>>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
     private float segundosParaPVP = 10.0f;
     private Transform player;
     private int danoPlayer = 20;
@@ -78,6 +82,22 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void setVidaHud(int life)
+    {
+        HUDController.setLife(life);
+    }
+
+    public void enableCosmicDust()
+    {
+        cosmicDustController.enableCosmicDust();
+        //desativar radar!
+    }
+
+    public void disableCosmicDust()
+    {
+        cosmicDustController.disableCosmicDust();
+        //reativar radar!
+    }
 
     IEnumerator pvpOn()
     {

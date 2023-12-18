@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 7527409424234691400}
   - component: {fileID: 306323543738002801}
   - component: {fileID: -2316309328926662928}
-  - component: {fileID: 4294527914561799756}
+  - component: {fileID: 6813582431492681870}
+  - component: {fileID: 8037609682623085369}
+  - component: {fileID: 4153222133318998423}
   m_Layer: 0
   m_Name: AsteroidePequeno
   m_TagString: Untagged
@@ -158,10 +160,45 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11, y: 0.21}
+  m_Offset: {x: -0.22, y: 0.25}
   serializedVersion: 2
-  m_Radius: 0.6
---- !u!50 &4294527914561799756
+  m_Radius: 0.46
+--- !u!58 &6813582431492681870
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241709417751221008}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.16, y: -0.06}
+  serializedVersion: 2
+  m_Radius: 0.28
+--- !u!50 &8037609682623085369
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -187,7 +224,50 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
+--- !u!66 &4153222133318998423
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241709417751221008}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths: []
+  m_CompositePaths:
+    m_Paths: []
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
+  m_CompositeGameObject: {fileID: 241709417751221008}
 --- !u!1 &552611813329013698
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6039581507587172646}
   - component: {fileID: 6468875901225855808}
-  - component: {fileID: 5207959530901638291}
+  - component: {fileID: 912020761703473511}
   m_Layer: 7
   m_Name: Amestista
   m_TagString: Untagged
@@ -308,7 +388,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &5207959530901638291
+--- !u!60 &912020761703473511
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -337,7 +417,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -371,7 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2841808384627066834}
   - component: {fileID: 5918441860364630911}
-  - component: {fileID: 7820455512619053}
+  - component: {fileID: 7791514336377296699}
   m_Layer: 7
   m_Name: Esmeralda
   m_TagString: Untagged
@@ -446,7 +526,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &7820455512619053
+--- !u!60 &7791514336377296699
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -475,7 +555,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -490,14 +570,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.28510165, y: 0.73735046}
-      - {x: -0.3065982, y: 0.7381965}
-      - {x: -0.632643, y: 0.400733}
-      - {x: -0.6385448, y: -0.40625}
-      - {x: -0.3125, y: -0.7322948}
-      - {x: 0.25802732, y: -0.72639275}
-      - {x: 0.59375, y: -0.39792895}
-      - {x: 0.5819466, y: 0.4195013}
+    - - {x: -0.3125, y: 0.75}
+      - {x: -0.65625, y: 0.625}
+      - {x: -0.65625, y: -0.40625}
+      - {x: -0.3125, y: -0.75}
+      - {x: 0.5, y: -0.75}
+      - {x: 0.59375, y: -0.46875}
+      - {x: 0.59375, y: 0.75}
   m_UseDelaunayMesh: 0
 --- !u!1 &1736689999150855462
 GameObject:
@@ -509,7 +588,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4427516990880916283}
   - component: {fileID: 1263882608086537371}
-  - component: {fileID: 5182237823372764908}
+  - component: {fileID: 554049203353210741}
   m_Layer: 7
   m_Name: Diamante
   m_TagString: Untagged
@@ -584,7 +663,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &5182237823372764908
+--- !u!60 &554049203353210741
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -613,7 +692,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -647,7 +726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1239586670984358616}
   - component: {fileID: 8031765291033848977}
-  - component: {fileID: 3401891564150205462}
+  - component: {fileID: 9084778937516259743}
   m_Layer: 7
   m_Name: "\xC1gata"
   m_TagString: Untagged
@@ -722,7 +801,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &3401891564150205462
+--- !u!60 &9084778937516259743
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -751,7 +830,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -766,15 +845,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.25212598, y: 0.6892412}
-      - {x: -0.2205497, y: 0.68823385}
-      - {x: -0.8065984, y: 0.48267937}
-      - {x: -0.820143, y: -0.13216698}
-      - {x: -0.8024378, y: -0.20907211}
-      - {x: -0.45520544, y: -0.57604504}
-      - {x: 0.45907235, y: -0.5701432}
-      - {x: 0.8260446, y: -0.20210743}
-      - {x: 0.8319465, y: 0.19136691}
-      - {x: 0.83194643, y: 0.46875}
-      - {x: 0.28134167, y: 0.69408}
+    - - {x: 0.5, y: 0.71875}
+      - {x: -0.8125, y: 0.71875}
+      - {x: -0.84375, y: 0.59375}
+      - {x: -0.84375, y: -0.46875}
+      - {x: -0.4375, y: -0.59375}
+      - {x: 0.71875, y: -0.59375}
+      - {x: 0.84375, y: -0.34375}
+      - {x: 0.84375, y: 0.46875}
+      - {x: 0.8125, y: 0.59375}
   m_UseDelaunayMesh: 0

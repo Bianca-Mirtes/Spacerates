@@ -9,6 +9,7 @@ public class AsteroidField : MonoBehaviour
     public GameObject[] asteroids;
     public int totalDeAsteroides = 70;
     public int distanceBetween = 2;
+    private float variacao = 0.95f;
 
     // Start is called before the first frame update
     void Start()
@@ -41,8 +42,12 @@ public class AsteroidField : MonoBehaviour
             foreach (var ponto in pontos)
             {
                 Vector3 spawnPosition = new Vector3(ponto.x, ponto.y, 0f);
-                if(spawnPosition != Vector3.zero)
+                if (spawnPosition != Vector3.zero)
+                {
+                    spawnPosition.x += Random.Range(0, variacao);
+                    spawnPosition.y += Random.Range(0, variacao);
                     Instantiate(asteroids[Random.Range(0, asteroids.Length)], spawnPosition, Quaternion.identity, container.transform);
+                }   
             }
         }
     }
