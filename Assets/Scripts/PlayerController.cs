@@ -28,11 +28,19 @@ public class PlayerController : MonoBehaviour
     public GameObject laser1;
 
     public float speed = 3;
+    private float speedReference = 3;
+    private int carga = 200;
+    private int cargaAtual = 0;
+    private bool coletaEnable = true;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
+
+        speedReference = speed;
+        FindObjectOfType<GameController>().changeSpeed(speed);
+        setCarga(carga);
     }
 
     private void verifTimeForAttack()
@@ -65,6 +73,41 @@ public class PlayerController : MonoBehaviour
     public void setXP(int value)
     {
         xpPlayer += value;
+    }
+
+    public int getCarga()
+    {
+        return carga;
+    }
+
+    public void setCarga(int newCarga)
+    {
+        carga = newCarga;
+    }
+
+    public void setCargaAtual(int pesoAdiicionado)
+    {
+        cargaAtual += pesoAdiicionado;
+    }
+
+    public int getCargaAtual()
+    {
+        return cargaAtual;
+    }
+
+    public void nextLvl()
+    {
+        xpPlayer = 0;
+        //carga += Mathf.Abs((carga * 2 / 10));
+        //setCarga(carga);
+        //speedReference = speedReference + 1;
+        //speed = speedReference;
+        //modificar valores velocidade+tanto...
+    }
+
+    public float getSpeed()
+    {
+        return speed;
     }
 
     private void Awake()
@@ -191,6 +234,24 @@ public class PlayerController : MonoBehaviour
     {
         verifAttack();
         verifTimeForAttack();
+
+        //mecanica de reduzir velocidade com peso
+        if (cargaAtual > carga)
+        {
+            if (speed == speedReference)
+            {
+                speed = speed / 2;
+                FindObjectOfType<GameController>().changeSpeed(speed);
+                coletaEnable = false;
+            }
+                
+        }
+        else if (speed != speedReference)
+        {
+            speed = speedReference;
+            FindObjectOfType<GameController>().changeSpeed(speed);
+            coletaEnable = true;
+        }
     }
 
     private void verifAttack()
@@ -237,7 +298,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.layer == 7)
         {
-            if (input.Player.Coleta.IsPressed())
+            if (input.Player.Coleta.IsPressed() && coletaEnable)
             {
                 //som de coleta
                 FindObjectOfType<GameController>().updateJewels(collision.gameObject.name);

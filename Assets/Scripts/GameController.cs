@@ -38,7 +38,10 @@ public class GameController : MonoBehaviour
 
         background.GetComponent<AudioSource>().PlayOneShot(backgroundSound);
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
         StartCoroutine(pvpOn());
+        //Set HUD
+        HUDController.setAttack(danoPlayer);
     }
 
     // Update is called once per frame
@@ -63,24 +66,47 @@ public class GameController : MonoBehaviour
         if (joia.Equals("Ágata"))
         {
             HUDController.addGema(1);
+            player.GetComponent<PlayerController>().setCargaAtual(10);
+            player.GetComponent<PlayerController>().setXP(10);
         }
         if (joia.Equals("Ametista"))
         {
             HUDController.addGema(2);
+            player.GetComponent<PlayerController>().setCargaAtual(15);
+            player.GetComponent<PlayerController>().setXP(15);
         }
         if (joia.Equals("Diamante"))
         {
-            HUDController.addGema(3);  
+            HUDController.addGema(3);
+            player.GetComponent<PlayerController>().setCargaAtual(20);
+            player.GetComponent<PlayerController>().setXP(20);
         }
         if (joia.Equals("Esmeralda"))
         {
             HUDController.addGema(4);
+            player.GetComponent<PlayerController>().setCargaAtual(25);
+            player.GetComponent<PlayerController>().setXP(25);
         }
     }
 
     public void setVidaHud(int life)
     {
         HUDController.setLife(life);
+    }
+
+    public void nextLvl()
+    {
+        HUDController.nextLvl();
+    }
+
+    public void changeSpeed(float speed)
+    {
+        HUDController.changeSpeed(speed);
+    }
+
+    public void changeCargaBar(float atual, float total)
+    {
+        HUDController.setCarga(atual, total);
     }
 
     public void enableCosmicDust()

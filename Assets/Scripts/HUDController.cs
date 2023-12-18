@@ -23,14 +23,15 @@ public class HUDController : MonoBehaviour
     public TextMeshProUGUI jogadores;
     public TextMeshProUGUI pvp;
 
+    public Image fillCarga;
+    public Sprite fill1;
+    public Sprite fill2;
 
     private int agataQtdd = 0;
     private int ametistaQtdd = 0;
     private int diamanteQtdd = 0;
     private int esmeraldaQtdd = 0;
 
-    private int cargaTotal = 200;
-    private int cargaAtual = 0;
     private int nivelAtual = 1;
 
     // Start is called before the first frame update
@@ -40,11 +41,9 @@ public class HUDController : MonoBehaviour
         setLife(100);
         setNivel(nivelAtual);
 
-        carga.text = "0/"+ cargaTotal;
-
-        durabilidadeAtual.text = "Durabilidade: 0/0";
-        ataqueAtual.text = "Ataque: 0/0";
-        velocidadeAtual.text = "Velocidade: 0";
+        //carga.text = "0/";
+        //durabilidadeAtual.text = "Durabilidade: 0/0";
+        //velocidadeAtual.text = "Velocidade: 0";
     }
 
     private void atualizaQtddGemas()
@@ -60,14 +59,38 @@ public class HUDController : MonoBehaviour
         vida.text = life + "/100";
     }
 
+    public void nextLvl()
+    {
+        nivelAtual++;
+        setNivel(nivelAtual);
+    }
+
     private void setNivel(int lvl)
     {
         nivel.text = ""+ lvl;
     }
 
-    public void setCargaTotal(int cargaTotal)
+    public void setAttack(int dano)
     {
-        this.cargaTotal = cargaTotal;
+        ataqueAtual.text = "Ataque: "+ dano;
+    }
+
+    public void changeSpeed(float speed)
+    {
+        velocidadeAtual.text = "Velocidade: "+speed;
+    }
+
+    public void setCarga(float cargaAtual, float cargaTotal)
+    {
+        carga.text = cargaAtual+"/"+cargaTotal;
+        if(cargaAtual > cargaTotal)
+        {
+            fillCarga.sprite = fill2;
+        }
+        else
+        {
+            fillCarga.sprite = fill1;
+        }
     }
 
     // Update is called once per frame
@@ -96,7 +119,6 @@ public class HUDController : MonoBehaviour
             esmeraldaQtdd++;
         }
         atualizaQtddGemas();
-        //calcularCarga();
     }
 
     public void pvpOn()
