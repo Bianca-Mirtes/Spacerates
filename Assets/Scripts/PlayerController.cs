@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public HUDController HUDController;
+    public ShopController shopController;
+    private bool shopEnable = false;
 
     private Rigidbody2D rb;
     private Input input;
@@ -221,6 +223,45 @@ public class PlayerController : MonoBehaviour
         HUDController.atualizaQtddGemas(agataQtdd, ametistaQtdd, diamanteQtdd, esmeraldaQtdd);
     }
 
+    public void resetGem(int gem)
+    {
+        if(gem == 1)
+        {
+            cargaAtual -= agataQtdd * 10;
+            agataQtdd = 0;
+        }
+        if (gem == 2)
+        {
+            cargaAtual -= ametistaQtdd * 15;
+            ametistaQtdd = 0;
+        }
+        if (gem == 3)
+        {
+            cargaAtual -= diamanteQtdd * 20;
+            diamanteQtdd = 0;
+        }
+        if (gem == 4)
+        {
+            cargaAtual -= esmeraldaQtdd * 25;
+            esmeraldaQtdd = 0;
+        }
+        HUDController.atualizaQtddGemas(agataQtdd, ametistaQtdd, diamanteQtdd, esmeraldaQtdd);
+    }
+
+    public int getGemNumber(int gem)
+    {
+        if(gem == 1)
+            return agataQtdd;
+        else if(gem == 2)
+            return ametistaQtdd;
+        else if(gem == 3)
+            return diamanteQtdd;
+        else if(gem == 4)
+            return esmeraldaQtdd;
+        else
+            return 0;
+    }
+
     public string getStatus()
     {
         return statusPlayer;
@@ -266,6 +307,21 @@ public class PlayerController : MonoBehaviour
         verifAttack();
         verifTimeForAttack();
 
+        //abrir loja
+        if (input.Player.Loja.triggered){
+            if (shopEnable)
+            {
+                shopController.disabledShop();
+                shopEnable = false;
+            }
+            else
+            {
+                shopController.enabledShop();
+                shopEnable = true;
+            }
+        }
+        
+
         //mecanica de reduzir velocidade com peso
         if (cargaAtual > carga)
         {
@@ -289,7 +345,7 @@ public class PlayerController : MonoBehaviour
     {
         if (canAttack)
         {
-             if (input.Player.Attack.IsPressed())
+             if (input.Player.Attack.triggered)
              {
                 if (statusPlayer.Equals("right"))
                 {

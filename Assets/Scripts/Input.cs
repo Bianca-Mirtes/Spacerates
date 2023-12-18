@@ -62,6 +62,15 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Loja"",
+                    ""type"": ""Button"",
+                    ""id"": ""c2e6e8bf-fbbb-4a43-9663-d0045d2c9be9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -218,6 +227,17 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""action"": ""Coleta"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""be6f56b8-344a-4bd4-855d-41f94d913d19"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Loja"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -230,6 +250,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_Player_MoveY = m_Player.FindAction("MoveY", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Coleta = m_Player.FindAction("Coleta", throwIfNotFound: true);
+        m_Player_Loja = m_Player.FindAction("Loja", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -295,6 +316,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_MoveY;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Coleta;
+    private readonly InputAction m_Player_Loja;
     public struct PlayerActions
     {
         private @Input m_Wrapper;
@@ -303,6 +325,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         public InputAction @MoveY => m_Wrapper.m_Player_MoveY;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Coleta => m_Wrapper.m_Player_Coleta;
+        public InputAction @Loja => m_Wrapper.m_Player_Loja;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -324,6 +347,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Coleta.started += instance.OnColeta;
             @Coleta.performed += instance.OnColeta;
             @Coleta.canceled += instance.OnColeta;
+            @Loja.started += instance.OnLoja;
+            @Loja.performed += instance.OnLoja;
+            @Loja.canceled += instance.OnLoja;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -340,6 +366,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Coleta.started -= instance.OnColeta;
             @Coleta.performed -= instance.OnColeta;
             @Coleta.canceled -= instance.OnColeta;
+            @Loja.started -= instance.OnLoja;
+            @Loja.performed -= instance.OnLoja;
+            @Loja.canceled -= instance.OnLoja;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -363,5 +392,6 @@ public partial class @Input: IInputActionCollection2, IDisposable
         void OnMoveY(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnColeta(InputAction.CallbackContext context);
+        void OnLoja(InputAction.CallbackContext context);
     }
 }

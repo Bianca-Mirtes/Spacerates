@@ -8,6 +8,8 @@ public class XPBarController : MonoBehaviour
     private Transform player;
     public int total = 100;
     public int incremento = 20;
+
+    public ShopController shopController;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class XPBarController : MonoBehaviour
             gameObject.GetComponent<Slider>().maxValue = valorMax + incremento;
 
             //CHAMAR LOJINHA
+            shopController.enabledShop();
 
             //Reset
             player.GetComponent<PlayerController>().nextLvl();
