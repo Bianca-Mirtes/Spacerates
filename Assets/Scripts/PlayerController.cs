@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private string statusPlayer = "right";
     private float timeBetween = 2f;
     private Animator ani;
+    private bool direcaoHorizontal = true;
     private bool canAttack = true;
 
     private int life = 100;
@@ -18,6 +19,9 @@ public class PlayerController : MonoBehaviour
     public GameObject localSpawn2;
     public GameObject localSpawn3;
     public GameObject localSpawn4;
+
+    public PolygonCollider2D colliderH;
+    public PolygonCollider2D colliderV;
 
     private float rayAttack = 4f;
     private GameObject attackController;
@@ -92,33 +96,55 @@ public class PlayerController : MonoBehaviour
         if(horizontal> 0)
         {
             ani.SetBool("walking1", true);
+            ani.SetBool("walking2", false);
             Flip(0);
             statusPlayer = "right";
+
+            if (!direcaoHorizontal)
+                changeCollider(0);
         }
         if (horizontal < 0)
         {
             ani.SetBool("walking1", true);
+            ani.SetBool("walking2", false);
             Flip(1);
             statusPlayer = "left";
+
+            if (!direcaoHorizontal)
+                changeCollider(0);
         }
         if (vertical > 0)
         {
-            //ani.SetBool("walking2", true);
-            //Flip(2);
+            ani.SetBool("walking1", false);
+            ani.SetBool("walking2", true);
+            Flip(0);
             statusPlayer = "up";
+            
+            if (direcaoHorizontal)
+                changeCollider(1);
         }
         if(vertical < 0)
         {
-            //ani.SetBool("walking2", true);
-            //Flip(3);
+            ani.SetBool("walking1", false);
+            ani.SetBool("walking2", true);
+            Flip(3);
             statusPlayer = "down";
 
+            if (direcaoHorizontal)
+                changeCollider(1);
         }
-        if(horizontal == 0 && vertical == 0)
+        if (horizontal == 0 && vertical == 0)
         {
-            ani.SetBool("walking1",false);
-            //ani.SetBool("walking2", false);
+            ani.SetBool("walking1", false);
+            ani.SetBool("walking2", false);
+            ani.Play("idleHorizontal", 0, 0f);
+            float resetY = Mathf.Abs(transform.localScale.y); //Corrige bug do navio de cabeca pra baixo
+            transform.localScale = new Vector3(transform.localScale.x, resetY, transform.localScale.z);
+            ani.speed = 0; //Desliga os motores rsrs
+            changeCollider(0);
         }
+        else
+            ani.speed = 1;
     }
 
     public string getStatus()
@@ -138,6 +164,27 @@ public class PlayerController : MonoBehaviour
             scaleY *= -1;
         }
         transform.localScale = new Vector3(scaleX, scaleY, transform.localScale.z);
+    }
+
+    private void changeCollider(int direcao)
+    {
+        if(direcao == 0)
+        {
+            if (colliderH != null)
+            {
+                PolygonCollider2D colliderDestino = gameObject.GetComponent<PolygonCollider2D>();
+                colliderDestino.points = colliderH.points;
+                direcaoHorizontal = true;
+            }
+        }
+        else {
+            if (colliderV != null)
+            {
+                PolygonCollider2D colliderDestino = gameObject.GetComponent<PolygonCollider2D>();
+                colliderDestino.points = colliderV.points;
+                direcaoHorizontal = false;
+            }
+        }
     }
 
     private void Update()
