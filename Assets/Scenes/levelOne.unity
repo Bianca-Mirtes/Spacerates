@@ -8612,6 +8612,7 @@ MonoBehaviour:
   - {fileID: 2869936171926116570, guid: a2e34626a9219b748ae43164c08eb47c, type: 3}
   total: 70
   distanceBetween: 2
+  tamanhoMaximo: 15
 --- !u!4 &577963519
 Transform:
   m_ObjectHideFlags: 0
@@ -14231,6 +14232,7 @@ MonoBehaviour:
   - {fileID: 0}
   total: 10
   distanceBetween: 3
+  tamanhoMaximo: 0
 --- !u!4 &1401832939
 Transform:
   m_ObjectHideFlags: 0
@@ -15718,6 +15720,7 @@ MonoBehaviour:
   - {fileID: 6474702414180637744, guid: 0922efcb4031fcd44a6c9cd79a909f89, type: 3}
   total: 10
   distanceBetween: 3
+  tamanhoMaximo: 0
 --- !u!4 &1569331275
 Transform:
   m_ObjectHideFlags: 0

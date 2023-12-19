@@ -47,7 +47,12 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        bool isAlive = player.GetComponent<PlayerController>().getLife() > 0;
+        bool blackHole = player.GetComponent<PlayerController>().getBlackHole();
+        if (!isAlive || blackHole)
+        {
+            print("e morreu");
+        }
     }
 
     public int getDano()

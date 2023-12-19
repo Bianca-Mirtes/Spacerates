@@ -364,6 +364,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public bool getBlackHole()
+    {
+        return buracoNegro != Vector2.zero;
+    }
+
     private void verifAttack()
     {
         if (canAttack)
@@ -404,10 +409,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.layer == 9)
         {
-            print("cai");
             Transform target = collision.GetComponentInChildren<Transform>().GetChild(0).GetComponentInChildren<Transform>();
-            print(target);
-            
             buracoNegro = new Vector2(target.position.x, target.position.y);
         }
     }
