@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+guid: d1aa0a7f5812b6e12b28b50d1c23def7
+=======
+<<<<<<< HEAD
 guid: 48d921e1878506449a46adbf7128d810
 =======
 guid: b5c2dc599d4f540459f1f60ae7835d3f
 >>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
+>>>>>>> c46fc8b61774b18bc73acf8f02c13fe4d3db2bd1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -39,10 +43,14 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
 <<<<<<< HEAD
+    filterMode: 1
+=======
+<<<<<<< HEAD
     filterMode: 0
 =======
     filterMode: 1
 >>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
+>>>>>>> c46fc8b61774b18bc73acf8f02c13fe4d3db2bd1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -52,10 +60,14 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
 <<<<<<< HEAD
+  spriteMode: 1
+=======
+<<<<<<< HEAD
   spriteMode: 2
 =======
   spriteMode: 1
 >>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
+>>>>>>> c46fc8b61774b18bc73acf8f02c13fe4d3db2bd1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -120,6 +132,9 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
+<<<<<<< HEAD
+    sprites: []
+=======
 <<<<<<< HEAD
     sprites:
     - serializedVersion: 2
@@ -461,6 +476,7 @@ TextureImporter:
 =======
     sprites: []
 >>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
+>>>>>>> c46fc8b61774b18bc73acf8f02c13fe4d3db2bd1
     outline: []
     physicsShape: []
     bones: []
@@ -471,6 +487,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+<<<<<<< HEAD
+    nameFileIdTable: {}
+=======
 <<<<<<< HEAD
     nameFileIdTable:
       PiracialEnemy_0: 348097596
@@ -492,6 +511,7 @@ TextureImporter:
 =======
     nameFileIdTable: {}
 >>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
+>>>>>>> c46fc8b61774b18bc73acf8f02c13fe4d3db2bd1
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
