@@ -308,6 +308,11 @@ public class PlayerController : MonoBehaviour
         verifTimeForAttack();
 
         //abrir loja
+        if (shopController.gameObject.activeSelf && !shopEnable)
+        {
+            shopEnable = true;
+        }
+
         if (input.Player.Loja.triggered){
             if (shopEnable)
             {

@@ -32,6 +32,7 @@ public class XPBarController : MonoBehaviour
             shopController.enabledShop();
 
             //Reset
+            shopController.addPoint();
             player.GetComponent<PlayerController>().nextLvl();
             FindObjectOfType<GameController>().nextLvl();
             //float speed = player.GetComponent<PlayerController>().getSpeed();

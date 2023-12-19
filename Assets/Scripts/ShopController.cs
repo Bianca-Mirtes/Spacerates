@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ShopController : MonoBehaviour
 {
-    public TextMeshProUGUI moedas;
+    public TextMeshProUGUI moedasEPontos;
 
     public TextMeshProUGUI moedas1;
     public TextMeshProUGUI moedas2;
@@ -19,14 +19,22 @@ public class ShopController : MonoBehaviour
     public Button venderMoedas3;
     public Button venderMoedas4;
 
+    public Button comprar1;
+    public Button comprar2;
+    public Button comprar3;
+    public Button comprar4;
+    public Button comprar5;
+
     public Color enableColor;
     public Color disableColor;
 
     private PlayerController player;
     private bool shopEnable = false;
     private int valor1, valor2, valor3, valor4;
-    private int totalDeMoedas;
 
+    public int preco1, preco2, preco3, preco4, preco5;
+    private int totalDeMoedas;
+    private int totalDePontos;
 
     // Start is called before the first frame update
     void Start()
@@ -35,8 +43,10 @@ public class ShopController : MonoBehaviour
         valor2 = 2;
         valor3 = 4;
         valor4 = 6;
+
         totalDeMoedas = 0;
-        moedas.text = totalDeMoedas + " moeda(s)";
+        totalDePontos = 0;
+        atualizarRecursos();
         gameObject.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
@@ -51,14 +61,20 @@ public class ShopController : MonoBehaviour
             moedas3.text = player.getGemNumber(3) * valor3 + " moeda(s)";
             moedas4.text = player.getGemNumber(4) * valor4 + " moeda(s)";
 
-            enableBtn(player.getGemNumber(1), venderMoedas1);
-            enableBtn(player.getGemNumber(2), venderMoedas2);
-            enableBtn(player.getGemNumber(3), venderMoedas3);
-            enableBtn(player.getGemNumber(4), venderMoedas4);
+            enableBtnVenda(player.getGemNumber(1), venderMoedas1);
+            enableBtnVenda(player.getGemNumber(2), venderMoedas2);
+            enableBtnVenda(player.getGemNumber(3), venderMoedas3);
+            enableBtnVenda(player.getGemNumber(4), venderMoedas4);
+
+            enableBtnCompra(preco1, comprar1);
+            enableBtnCompra(preco2, comprar2);
+            enableBtnCompra(preco3, comprar3);
+            enableBtnCompra(preco4, comprar4);
+            enableBtnCompra(preco5, comprar5);
         }
     }
 
-    private void enableBtn(int numGem, Button btn)
+    private void enableBtnVenda(int numGem, Button btn)
     {
         if (numGem == 0)
         {
@@ -71,6 +87,26 @@ public class ShopController : MonoBehaviour
             btn.GetComponentInChildren<TextMeshProUGUI>().color = enableColor;
         }
             
+    }
+
+    private void enableBtnCompra(int preco, Button btn)
+    {
+        if (totalDePontos == 0 || preco > totalDeMoedas)
+        {
+            btn.interactable = false;
+            btn.GetComponentInChildren<TextMeshProUGUI>().color = disableColor;
+        }
+        else
+        {
+            btn.interactable = true;
+            btn.GetComponentInChildren<TextMeshProUGUI>().color = enableColor;
+        }
+
+    }
+
+    public void disableBtnCompra(Button btn)
+    {
+        //StartCoroutine()
     }
 
     public void vender(int gem)
@@ -95,8 +131,49 @@ public class ShopController : MonoBehaviour
             totalDeMoedas += player.getGemNumber(4) * valor4;
             player.resetGem(4);
         }
+        atualizarRecursos();
+    }
 
-        moedas.text = totalDeMoedas + " moeda(s)";
+    public void comprar(int atributo)
+    {
+        if (atributo == 1)
+        {
+            totalDeMoedas -= preco1;
+            //player.improveLife();
+        }else
+        if (atributo == 2)
+        {
+            totalDeMoedas -= preco2;
+            //player.improveCarga();
+        }else
+        if (atributo == 3)
+        {
+            totalDeMoedas -= preco3;
+            //player.improveAtaque();
+        }else
+        if (atributo == 4)
+        {
+            totalDeMoedas -= preco4;
+            //player.improveVelocidade();
+        }else
+        if (atributo == 5)
+        {
+            totalDeMoedas -= preco5;
+            //player.improveEspecial();
+        }
+        totalDePontos--;
+        atualizarRecursos();
+    }
+
+    public void addPoint()
+    {
+        totalDePontos++;
+        atualizarRecursos();
+    }
+
+    private void atualizarRecursos()
+    {
+        moedasEPontos.text = totalDeMoedas + " moeda(s) e " + totalDePontos + " ponto(s) de XP";
     }
 
     public void enabledShop()
