@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class AsteroidField : MonoBehaviour
+public class CelestialBodyField: MonoBehaviour
 {
     public GameObject container;
-    public GameObject[] asteroids;
-    public int totalDeAsteroides = 70;
+    public GameObject[] objetos;
+    public int total = 70;
     public int distanceBetween = 2;
     private float variacao = 0.95f;
 
@@ -15,13 +15,13 @@ public class AsteroidField : MonoBehaviour
     void Start()
     {
         List<Vector2> pontos = generatePoints();
-        generateAsteroids(pontos);
+        generate(pontos);
     }
 
     private List<Vector2> generatePoints()
     {
         List<Vector2> paresOrdenados = new List<Vector2>();
-        for (int i = 0; i < totalDeAsteroides; i++)
+        for (int i = 0; i < total; i++)
         {
             float coordenadaX = Random.Range(-15, 16) * distanceBetween;
             float coordenadaY = Random.Range(-15, 16) * distanceBetween;
@@ -35,9 +35,9 @@ public class AsteroidField : MonoBehaviour
         return paresOrdenados;
     }
 
-    private void generateAsteroids(List<Vector2> pontos)
+    private void generate(List<Vector2> pontos)
     {
-        if (container != null && asteroids[0] != null && asteroids[1] != null)
+        if (container != null && objetos[0] != null)
         {
             foreach (var ponto in pontos)
             {
@@ -46,7 +46,7 @@ public class AsteroidField : MonoBehaviour
                 {
                     spawnPosition.x += Random.Range(0, variacao);
                     spawnPosition.y += Random.Range(0, variacao);
-                    Instantiate(asteroids[Random.Range(0, asteroids.Length)], spawnPosition, Quaternion.identity, container.transform);
+                    Instantiate(objetos[Random.Range(0, objetos.Length)], spawnPosition, Quaternion.identity, container.transform);
                 }   
             }
         }

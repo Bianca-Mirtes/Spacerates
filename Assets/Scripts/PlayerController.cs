@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
     private int ametistaQtdd = 0;
     private int diamanteQtdd = 0;
     private int esmeraldaQtdd = 0;
+
+    private Vector2 buracoNegro = Vector2.zero;
     // Start is called before the first frame update
     void Start()
     {
@@ -320,6 +322,9 @@ public class PlayerController : MonoBehaviour
         verifAttack();
         verifTimeForAttack();
 
+        if(buracoNegro != Vector2.zero)
+            transform.position = Vector2.MoveTowards(transform.position, buracoNegro, 5f * Time.deltaTime);
+
         //abrir loja
         if (shopController.gameObject.activeSelf && !shopEnable)
         {
@@ -396,6 +401,14 @@ public class PlayerController : MonoBehaviour
             FindObjectOfType<GameController>().computeAttackEnemy(20);
             Destroy(collision.gameObject);
             //Destroy(gameObject);
+        }
+        if (collision.gameObject.layer == 9)
+        {
+            print("cai");
+            Transform target = collision.GetComponentInChildren<Transform>().GetChild(0).GetComponentInChildren<Transform>();
+            print(target);
+            
+            buracoNegro = new Vector2(target.position.x, target.position.y);
         }
     }
 

@@ -58,6 +58,7 @@ public class GameController : MonoBehaviour
     public void setDano(int dano)
     {
         danoPlayer = dano;
+        HUDController.setAttack(danoPlayer);
     }
 
     public void computeAttackPlayer(GameObject enemy, int xp)
