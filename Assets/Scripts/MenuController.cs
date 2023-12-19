@@ -18,10 +18,12 @@ public class MenuController : MonoBehaviour
     public Color corDeDesabilitado;
 
     private GameObject btnSelected;
+    public AudioClip musicTheme;
 
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AudioSource>().PlayOneShot(musicTheme);
         if(EventSystem.current.currentSelectedGameObject == null)
             EventSystem.current.SetSelectedGameObject(play.gameObject);
         configPainel.SetActive(false);

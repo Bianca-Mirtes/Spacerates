@@ -6,16 +6,17 @@ TagManager:
   tags:
   - asteroid
   - enemy
+  - cosmicDust
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Laser
+  - LaserBlue
   - Water
   - UI
-  - 
-  - 
-  - 
+  - LaserRed
+  - collectibles
+  - cosmicDust
   - 
   - 
   - 
