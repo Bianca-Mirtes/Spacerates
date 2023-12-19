@@ -32,12 +32,7 @@ public class HUDController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        setLife(100);
         setNivel(nivelAtual);
-
-        //carga.text = "0/";
-        //durabilidadeAtual.text = "Durabilidade: 0/0";
-        //velocidadeAtual.text = "Velocidade: 0";
     }
 
     public void atualizaQtddGemas(int agataQtdd, int ametistaQtdd, int diamanteQtdd, int esmeraldaQtdd)
@@ -48,9 +43,9 @@ public class HUDController : MonoBehaviour
         esmeralda.text = "" + esmeraldaQtdd;
     }
 
-    public void setLife(int life)
+    public void setLife(float life, float maxLife)
     {
-        vida.text = life + "/100";
+        vida.text = life + "/" + maxLife;
     }
 
     public void nextLvl()

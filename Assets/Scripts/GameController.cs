@@ -58,7 +58,7 @@ public class GameController : MonoBehaviour
 
     public void computeAttackEnemy(int dano)
     {
-        player.GetComponent<PlayerController>().setLife(dano);
+        player.GetComponent<PlayerController>().setLife(player.GetComponent<PlayerController>().getLife() - dano);
     }
 
     public void updateJewels(string joia)
@@ -98,6 +98,11 @@ public class GameController : MonoBehaviour
     public void changeCargaBar(float atual, float total)
     {
         HUDController.setCarga(atual, total);
+    }
+    
+    public void changeLifeBar(float atual, float total)
+    {
+        HUDController.setLife(atual, total);
     }
 
     public void enableCosmicDust()

@@ -16,7 +16,8 @@ public class PlayerController : MonoBehaviour
     private bool direcaoHorizontal = true;
     private bool canAttack = true;
 
-    private int life = 100;
+    private int life;
+    private int maxLife;
     private int xpPlayer = 0;
 
     public GameObject localSpawn1;
@@ -47,6 +48,9 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
 
+        life = 100;
+        maxLife = 100;
+
         speedReference = speed;
         HUDController.changeSpeed(speed);
         HUDController.atualizaQtddGemas(agataQtdd, ametistaQtdd, diamanteQtdd, esmeraldaQtdd);
@@ -72,8 +76,17 @@ public class PlayerController : MonoBehaviour
 
     public void setLife(int value)
     {
-        life -= value;
-        HUDController.setLife(life);
+        life = value;
+    }
+
+    public int getMaxLife()
+    {
+        return maxLife;
+    }
+
+    public void setMaxLife(int value)
+    {
+        maxLife = value;
     }
     public int getXP()
     {

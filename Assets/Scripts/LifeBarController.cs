@@ -16,6 +16,10 @@ public class LifeBarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Slider>().value = player.GetComponent<PlayerController>().getLife();
+        float vidaAtual = player.GetComponent<PlayerController>().getLife();
+        float vidaMax   = player.GetComponent<PlayerController>().getMaxLife();
+        gameObject.GetComponent<Slider>().value = vidaAtual;
+        gameObject.GetComponent<Slider>().maxValue = vidaMax;
+        FindObjectOfType<GameController>().changeLifeBar(vidaAtual, vidaMax);
     }
 }

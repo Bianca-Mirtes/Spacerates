@@ -33,6 +33,10 @@ public class ShopController : MonoBehaviour
     private int valor1, valor2, valor3, valor4;
 
     public int preco1, preco2, preco3, preco4, preco5;
+
+    public int percentual1;
+    public int percentual2;
+
     private int totalDeMoedas;
     private int totalDePontos;
 
@@ -139,12 +143,25 @@ public class ShopController : MonoBehaviour
         if (atributo == 1)
         {
             totalDeMoedas -= preco1;
-            //player.improveLife();
-        }else
+            if (player.getLife() == player.getMaxLife())
+            {
+                player.setLife(player.getLife() + Mathf.Abs((player.getLife() * percentual2 / 10)));
+                player.setMaxLife(player.getMaxLife() + Mathf.Abs((player.getMaxLife() * percentual2 / 10)));
+            }else if(player.getLife() < player.getMaxLife())
+            {
+                int valor = player.getLife() + Mathf.Abs((player.getLife() * percentual2 / 10));
+                if(valor > player.getMaxLife())
+                {
+                    valor = player.getMaxLife();
+                }
+                player.setLife(valor);
+            }
+        }
+        else
         if (atributo == 2)
         {
             totalDeMoedas -= preco2;
-            //player.improveCarga();
+            player.setCarga(player.getCarga() + Mathf.Abs((player.getCarga() * percentual1 / 10)));
         }else
         if (atributo == 3)
         {
