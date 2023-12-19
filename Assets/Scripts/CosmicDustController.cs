@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CosmicDustController : MonoBehaviour
 {
+    public HUDController HUDController;
     public Transform position;
     public GameObject bg;
+    public Animator[] sprites;
     private bool enable = false;
 
     // Start is called before the first frame update
@@ -26,6 +28,8 @@ public class CosmicDustController : MonoBehaviour
         enable = true;
         gameObject.SetActive(true);
         bg.GetComponent<Animator>().SetBool("isEnable", true);
+        animeSprite(true);
+        HUDController.visibilidade(false);
     }
 
     public void disableCosmicDust()
@@ -34,11 +38,24 @@ public class CosmicDustController : MonoBehaviour
             StartCoroutine(desable());
     }
 
+    private void animeSprite(bool enable)
+    {
+        foreach(Animator anim in sprites)
+        {
+            if(enable)
+                anim.SetBool("isEnable", true);
+            else
+                anim.SetBool("isEnable", false);
+        }
+    }
+
     IEnumerator desable()
     {
         bg.GetComponent<Animator>().SetBool("isEnable", false);
-        yield return new WaitForSeconds(.3f);
+        animeSprite(false);
+        yield return new WaitForSeconds(.4f);
         enable = false;
         gameObject.SetActive(false);
+        HUDController.visibilidade(true);
     }
 }

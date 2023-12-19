@@ -27,6 +27,9 @@ public class HUDController : MonoBehaviour
     public Sprite fill1;
     public Sprite fill2;
 
+    public Color branco;
+    public Color escuro;
+
     private int nivelAtual = 1;
 
     // Start is called before the first frame update
@@ -86,6 +89,38 @@ public class HUDController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void visibilidade(bool estado)
+    {
+        GameObject[] objetosComATag = GameObject.FindGameObjectsWithTag("HUD");
+
+        foreach (GameObject objeto in objetosComATag)
+        {
+            if (objeto.GetComponent<Image>() != null)
+            {
+                if (estado)
+                {
+                    objeto.GetComponent<Image>().color = branco;
+                }
+                else
+                {
+                    objeto.GetComponent<Image>().color = escuro;
+                }
+            }
+
+            if (objeto.GetComponent<TextMeshProUGUI>() != null)
+            {
+                if (estado)
+                {
+                    objeto.GetComponent<TextMeshProUGUI>().color = branco;
+                }
+                else
+                {
+                    objeto.GetComponent<TextMeshProUGUI>().color = escuro;
+                }
+            }
+        }
     }
 
     public void pvpOn()
