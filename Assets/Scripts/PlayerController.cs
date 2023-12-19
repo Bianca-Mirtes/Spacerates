@@ -121,16 +121,16 @@ public class PlayerController : MonoBehaviour
     public void nextLvl()
     {
         xpPlayer = 0;
-        //carga += Mathf.Abs((carga * 2 / 10));
-        //setCarga(carga);
-        //speedReference = speedReference + 1;
-        //speed = speedReference;
-        //modificar valores velocidade+tanto...
     }
 
     public float getSpeed()
     {
         return speed;
+    }
+
+    public void setSpeed(int velocidade)
+    {
+        speedReference = velocidade;
     }
 
     private void Awake()

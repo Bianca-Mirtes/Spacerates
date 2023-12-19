@@ -171,7 +171,7 @@ public class ShopController : MonoBehaviour
         if (atributo == 4)
         {
             totalDeMoedas -= preco4;
-            //player.improveVelocidade();
+            player.setSpeed(player.getSpeed() - Mathf.Abs((player.getSpeed() * percentual1 / 10))); ();
         }else
         if (atributo == 5)
         {
