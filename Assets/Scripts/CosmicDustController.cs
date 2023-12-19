@@ -30,7 +30,8 @@ public class CosmicDustController : MonoBehaviour
 
     public void disableCosmicDust()
     {
-        StartCoroutine(desable());
+        if(gameObject.activeSelf)
+            StartCoroutine(desable());
     }
 
     IEnumerator desable()

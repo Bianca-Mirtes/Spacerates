@@ -20,19 +20,20 @@ public class ShopController : MonoBehaviour
     public Button venderMoedas4;
 
     public Button comprar1;
-    public Button comprar2;
-    public Button comprar3;
-    public Button comprar4;
-    public Button comprar5;
+    //public Button comprar2;
+    //public Button comprar3;
+    //public Button comprar4;
+    //public Button comprar5;
 
     public Color enableColor;
     public Color disableColor;
 
     private PlayerController player;
+    private GameController gameController;
     private bool shopEnable = false;
     private int valor1, valor2, valor3, valor4;
 
-    public int preco1, preco2, preco3, preco4, preco5;
+    public int preco1;
 
     public int percentual1;
     public int percentual2;
@@ -53,6 +54,7 @@ public class ShopController : MonoBehaviour
         atualizarRecursos();
         gameObject.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        gameController = FindObjectOfType<GameController>().GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -71,10 +73,10 @@ public class ShopController : MonoBehaviour
             enableBtnVenda(player.getGemNumber(4), venderMoedas4);
 
             enableBtnCompra(preco1, comprar1);
-            enableBtnCompra(preco2, comprar2);
-            enableBtnCompra(preco3, comprar3);
-            enableBtnCompra(preco4, comprar4);
-            enableBtnCompra(preco5, comprar5);
+            //enableBtnCompra(preco2, comprar2);
+            //enableBtnCompra(preco3, comprar3);
+            //enableBtnCompra(preco4, comprar4);
+            //enableBtnCompra(preco5, comprar5);
         }
     }
 
@@ -138,46 +140,29 @@ public class ShopController : MonoBehaviour
         atualizarRecursos();
     }
 
-    public void comprar(int atributo)
+    public void comprarLvl()
     {
-        if (atributo == 1)
+        totalDeMoedas -= preco1;
+        if (player.getLife() == player.getMaxLife())
         {
-            totalDeMoedas -= preco1;
-            if (player.getLife() == player.getMaxLife())
+            player.setLife(player.getLife() + Mathf.Abs((player.getLife() * percentual2 / 10)));
+            player.setMaxLife(player.getMaxLife() + Mathf.Abs((player.getMaxLife() * percentual2 / 10)));
+        }else if(player.getLife() < player.getMaxLife())
+        {
+            int valor = player.getLife() + Mathf.Abs((player.getLife() * percentual2 / 10));
+            if(valor > player.getMaxLife())
             {
-                player.setLife(player.getLife() + Mathf.Abs((player.getLife() * percentual2 / 10)));
-                player.setMaxLife(player.getMaxLife() + Mathf.Abs((player.getMaxLife() * percentual2 / 10)));
-            }else if(player.getLife() < player.getMaxLife())
-            {
-                int valor = player.getLife() + Mathf.Abs((player.getLife() * percentual2 / 10));
-                if(valor > player.getMaxLife())
-                {
-                    valor = player.getMaxLife();
-                }
-                player.setLife(valor);
+                valor = player.getMaxLife();
             }
+            player.setLife(valor);
         }
-        else
-        if (atributo == 2)
-        {
-            totalDeMoedas -= preco2;
-            player.setCarga(player.getCarga() + Mathf.Abs((player.getCarga() * percentual1 / 10)));
-        }else
-        if (atributo == 3)
-        {
-            totalDeMoedas -= preco3;
-            //player.improveAtaque();
-        }else
-        if (atributo == 4)
-        {
-            totalDeMoedas -= preco4;
-            player.setSpeed(player.getSpeed() - Mathf.Abs((player.getSpeed() * percentual1 / 10))); ();
-        }else
-        if (atributo == 5)
-        {
-            totalDeMoedas -= preco5;
-            //player.improveEspecial();
-        }
+
+        player.setCarga(player.getCarga() + Mathf.Abs((player.getCarga() * percentual1 / 10)));
+
+        gameController.setDano(gameController.getDano() + Mathf.Abs((gameController.getDano() * percentual1 / 10)));
+
+        player.setSpeed(player.getSpeed() - Mathf.Abs((player.getSpeed() * percentual2 / 10)));
+
         totalDePontos--;
         atualizarRecursos();
     }

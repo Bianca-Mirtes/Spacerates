@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
         return speed;
     }
 
-    public void setSpeed(int velocidade)
+    public void setSpeed(float velocidade)
     {
         speedReference = velocidade;
     }

@@ -50,6 +50,16 @@ public class GameController : MonoBehaviour
         
     }
 
+    public int getDano()
+    {
+        return danoPlayer;
+    }
+
+    public void setDano(int dano)
+    {
+        danoPlayer = dano;
+    }
+
     public void computeAttackPlayer(GameObject enemy, int xp)
     {
         enemy.GetComponent<EnemyController>().setLife(danoPlayer);
