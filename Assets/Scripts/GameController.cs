@@ -5,6 +5,7 @@ using System.Xml.XPath;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -26,15 +27,15 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(intance == null)
-        {
-            intance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        DontDestroyOnLoad(gameObject);
+        //if(intance == null)
+        //{
+        //    intance = this;
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
+        //DontDestroyOnLoad(gameObject);
 
         background.GetComponent<AudioSource>().PlayOneShot(backgroundSound);
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -51,7 +52,7 @@ public class GameController : MonoBehaviour
         bool blackHole = player.GetComponent<PlayerController>().getBlackHole();
         if (!isAlive || blackHole)
         {
-            print("e morreu");
+            SceneManager.LoadScene(2);
         }
     }
 

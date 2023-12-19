@@ -26,7 +26,8 @@ public class MenuController : MonoBehaviour
         GetComponent<AudioSource>().PlayOneShot(musicTheme);
         if(EventSystem.current.currentSelectedGameObject == null)
             EventSystem.current.SetSelectedGameObject(play.gameObject);
-        configPainel.SetActive(false);
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+            configPainel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -67,6 +68,11 @@ public class MenuController : MonoBehaviour
     public void playGame()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void loadMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void exit()
