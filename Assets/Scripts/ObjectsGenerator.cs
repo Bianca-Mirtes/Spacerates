@@ -17,6 +17,13 @@ public class ObjectsGenerator: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(generateInstances());
+    }
+    IEnumerator generateInstances()
+    {
+        //marca o tempo pro inicio do PVP
+        if (objetos[0].name == "enemy")
+        yield return new WaitForSeconds(10);
         List<Vector2> pontos = generatePoints();
         generate(pontos);
     }

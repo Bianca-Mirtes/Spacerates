@@ -58,7 +58,13 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene(2);
         }
 
-        if(combatController.getPlayersNum() == 0)
+        bool isAlive = player.GetComponent<PlayerController>().getLife() > 0;
+        if (!isAlive)
+        {
+            SceneManager.LoadScene(2);
+        }
+
+        if (combatController.getPlayersNum() == 0)
         {
             SceneManager.LoadScene(3);
         }

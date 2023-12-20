@@ -433,6 +433,16 @@ public class PlayerController : MonoBehaviour
         {
             Transform target = collision.GetComponentInChildren<Transform>().GetChild(0).GetComponentInChildren<Transform>();
             buracoNegro = new Vector2(target.position.x, target.position.y);
+        }    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            if (collision.gameObject.GetComponent<EnemyController>().getLvl() > lvl)
+            {
+                FindObjectOfType<GameController>().computeAttackEnemy(20);
+            }
         }
     }
 

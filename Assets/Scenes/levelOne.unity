@@ -8705,8 +8705,8 @@ MonoBehaviour:
   min: 12
   max: 16
   total: 0
-  distanceBetween: 7
-  tamanhoMaximo: 4
+  distanceBetween: 5
+  tamanhoMaximo: 3
 --- !u!1 &592188422
 GameObject:
   m_ObjectHideFlags: 0
