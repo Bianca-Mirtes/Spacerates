@@ -8529,7 +8529,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.6, y: -31.5, z: -15}
+  m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14972,7 +14972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da85138b9aa85ae44a07bd7c27a412cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {fileID: 593884690}
+  position: {fileID: 519420032}
   center: {fileID: 1658468105}
   asteroidsContainer: {fileID: 577963517}
   enemysContainer: {fileID: 0}

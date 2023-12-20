@@ -26,7 +26,8 @@ public class RadarController : MonoBehaviour
 
     void Update()
     {
-        transform.localPosition = position.localPosition;
+        Vector3 novaPosicao = new Vector3(position.localPosition.x, position.localPosition.y, 0);
+        transform.localPosition = novaPosicao;
         bgX = center.position.x;
         bgY = center.position.y;
         centroDoCirculo = new Vector3(bgX, bgY, 0f);
