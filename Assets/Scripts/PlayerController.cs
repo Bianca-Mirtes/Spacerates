@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
     private int diamanteQtdd = 0;
     private int esmeraldaQtdd = 0;
 
+    public AudioClip laserSound;
+
     private Vector2 buracoNegro = Vector2.zero;
     // Start is called before the first frame update
     void Start()
@@ -375,6 +377,7 @@ public class PlayerController : MonoBehaviour
         {
              if (input.Player.Attack.triggered)
              {
+                GetComponent<AudioSource>().PlayOneShot(laserSound);
                 if (statusPlayer.Equals("right"))
                 {
                     GameObject clone = Instantiate(laser1, localSpawn1.transform.position, localSpawn1.transform.rotation);

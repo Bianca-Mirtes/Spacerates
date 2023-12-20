@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
+    public Transform menuPainel;
     public Button play;
     public GameObject configPainel;
     public Slider volume;
@@ -18,7 +19,10 @@ public class MenuController : MonoBehaviour
     public Color corDeDesabilitado;
 
     private GameObject btnSelected;
+
     public AudioClip musicTheme;
+    public AudioClip selectionSound;
+    public AudioClip moveSound;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +38,15 @@ public class MenuController : MonoBehaviour
     void Update()
     {
         updateSelectedBtn();
+        AudioListener.volume = volume.value;
+    }
+    private void soundEffect(AudioClip audio)
+    {
+        menuPainel.GetComponent<AudioSource>().PlayOneShot(audio);
+    }
+    private void soundEffect(AudioClip audio, int idButton)
+    {
+        menuPainel.GetChild(idButton).GetComponent<AudioSource>().PlayOneShot(audio);
     }
 
     private void updateSelectedBtn()
@@ -41,6 +54,7 @@ public class MenuController : MonoBehaviour
         GameObject currentObj = EventSystem.current.currentSelectedGameObject;
         if ((btnSelected != currentObj) && currentObj != null)
         {
+            soundEffect(moveSound);
             Button[] allButtons = FindObjectsOfType<Button>();
             foreach (Button button in allButtons)
             {
@@ -67,16 +81,19 @@ public class MenuController : MonoBehaviour
 
     public void playGame()
     {
+        soundEffect(selectionSound, 0);
         SceneManager.LoadScene(1);
     }
 
     public void loadMenu()
     {
+        soundEffect(selectionSound);
         SceneManager.LoadScene(0);
     }
 
     public void exit()
     {
+        soundEffect(selectionSound, 2);
         Application.Quit();
     }
 }

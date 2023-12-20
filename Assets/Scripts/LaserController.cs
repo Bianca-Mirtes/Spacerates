@@ -9,7 +9,7 @@ using UnityEngine.Windows;
 public class LaserController : MonoBehaviour
 {
 
-    public float speed;
+    private float speed = 6;
     private int direction;
     private Transform player;
     private bool causesDamage;
