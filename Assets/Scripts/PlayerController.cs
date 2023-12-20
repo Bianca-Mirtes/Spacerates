@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip laserSound;
 
     private Vector2 buracoNegro = Vector2.zero;
+    private int lvl = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -124,7 +125,13 @@ public class PlayerController : MonoBehaviour
 
     public void nextLvl()
     {
+        lvl++;
         xpPlayer = 0;
+    }
+
+    public int getLvl()
+    {
+        return lvl;
     }
 
     public float getSpeed()

@@ -5,6 +5,7 @@ using UnityEngine;
 public class RadarController : MonoBehaviour
 {
     public Transform position;
+    public PlayerController player;
     public Transform center;
     public GameObject asteroidsContainer;
     public GameObject enemiesContainer;
@@ -37,6 +38,7 @@ public class RadarController : MonoBehaviour
     void FixedUpdate()
     {
         deletePoints();
+        int playerLvl = player.getLvl();
 
         float playerX = GameObject.FindGameObjectWithTag("Player").transform.position.x;
         float playerY = GameObject.FindGameObjectWithTag("Player").transform.position.y;
@@ -63,11 +65,14 @@ public class RadarController : MonoBehaviour
         {
             if (enemy.CompareTag("enemy"))
             {
-                float x = bgX + (enemy.position.x - playerX) * scale;
-                float y = bgY + (enemy.position.y - playerY) * scale;
-                Vector3 spawnPosition = new Vector3(x, y, 0f);
-                if (inside(spawnPosition))
-                    Instantiate(pontos[1], spawnPosition, Quaternion.identity, radarContainer.transform);
+                if(enemy.GetComponent<EnemyController>().getLvl() > playerLvl)
+                {
+                    float x = bgX + (enemy.position.x - playerX) * scale;
+                    float y = bgY + (enemy.position.y - playerY) * scale;
+                    Vector3 spawnPosition = new Vector3(x, y, 0f);
+                    if (inside(spawnPosition))
+                        Instantiate(pontos[1], spawnPosition, Quaternion.identity, radarContainer.transform);
+                }
             }
         }
     }

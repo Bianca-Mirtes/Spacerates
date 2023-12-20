@@ -34,6 +34,8 @@ public class EnemyController : MonoBehaviour
 
     public GameObject spawner;
     public GameObject laser1;
+
+    private int lvl;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +47,29 @@ public class EnemyController : MonoBehaviour
         Instantiate(spawner, new Vector3(transform.position.x - 0.3f, transform.position.y - 0.2f, transform.position.z), Quaternion.identity);
         Instantiate(spawner, new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z), Quaternion.identity);
         Instantiate(spawner, new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z), Quaternion.identity);
+
+        lvl = Random.Range(1, 4);
+        if(lvl == 1)
+        {
+            life.maxValue = 80;
+        }
+        else if(lvl == 2)
+        {
+            life.maxValue = 96;
+            life.value = 96;
+            transform.localScale = transform.localScale * 1.2f;
+        }
+        else
+        {
+            life.maxValue = 116;
+            life.value = 116;
+            transform.localScale = transform.localScale * 1.4f;
+        }
+    }
+
+    public int getLvl()
+    {
+        return lvl;
     }
 
     private void Dead()
