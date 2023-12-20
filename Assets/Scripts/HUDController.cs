@@ -38,6 +38,11 @@ public class HUDController : MonoBehaviour
         setNivel(nivelAtual);
     }
 
+    public void setJogadores(int players)
+    {
+        jogadores.text = "" + players;
+    }
+
     public void atualizaQtddGemas(int agataQtdd, int ametistaQtdd, int diamanteQtdd, int esmeraldaQtdd)
     {
         agata.text = "" + agataQtdd;

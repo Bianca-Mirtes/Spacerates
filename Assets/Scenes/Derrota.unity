@@ -900,6 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e8da47ec9079b4faeeeb4683b9662c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuPainel: {fileID: 971944160}
   play: {fileID: 1121781574}
   configPainel: {fileID: 0}
   volume: {fileID: 0}
@@ -907,6 +908,8 @@ MonoBehaviour:
   corDeSelecao: {r: 1, g: 1, b: 1, a: 1}
   corDeDesabilitado: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
   musicTheme: {fileID: 8300000, guid: 2dadec5a636119b45a366e165df65ff8, type: 3}
+  selectionSound: {fileID: 0}
+  moveSound: {fileID: 0}
 --- !u!82 &1289731890
 AudioSource:
   m_ObjectHideFlags: 0

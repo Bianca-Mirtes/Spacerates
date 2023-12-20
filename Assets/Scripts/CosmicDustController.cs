@@ -19,8 +19,11 @@ public class CosmicDustController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enable)
-            transform.localPosition = position.localPosition;
+        if (enable)
+        {
+            Vector3 novaPosicao = new Vector3(position.localPosition.x, position.localPosition.y, 0);
+            transform.localPosition = novaPosicao;
+        }
     }
 
     public void enableCosmicDust()

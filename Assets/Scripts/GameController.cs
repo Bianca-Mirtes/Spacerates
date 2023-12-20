@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public HUDController HUDController;
+    public CombatController combatController;
     public GameObject background;
     public AudioClip backgroundSound;
     public CosmicDustController cosmicDustController;
@@ -52,6 +53,11 @@ public class GameController : MonoBehaviour
         bool isAlive = player.GetComponent<PlayerController>().getLife() > 0;
         bool blackHole = player.GetComponent<PlayerController>().getBlackHole();
         if (!isAlive || blackHole)
+        {
+            SceneManager.LoadScene(2);
+        }
+
+        if(combatController.getPlayersNum() == 0)
         {
             SceneManager.LoadScene(2);
         }

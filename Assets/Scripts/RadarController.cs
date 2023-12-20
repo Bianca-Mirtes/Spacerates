@@ -7,13 +7,14 @@ public class RadarController : MonoBehaviour
     public Transform position;
     public Transform center;
     public GameObject asteroidsContainer;
-    public GameObject enemysContainer;
+    public GameObject enemiesContainer;
 
     public GameObject radarContainer;
     public GameObject[] pontos;
     public float scale;
 
     List<Transform> asteroids = new List<Transform>();
+    List<Transform> enemies = new List<Transform>();
     private float bgX;
     private float bgY;
     private Vector3 centroDoCirculo;
@@ -37,12 +38,12 @@ public class RadarController : MonoBehaviour
     {
         deletePoints();
 
-        asteroids.Clear();
-        asteroids = captureChildren(asteroidsContainer);
-
-        //asteroides
         float playerX = GameObject.FindGameObjectWithTag("Player").transform.position.x;
         float playerY = GameObject.FindGameObjectWithTag("Player").transform.position.y;
+
+        //asteroides
+        asteroids.Clear();
+        asteroids = captureChildren(asteroidsContainer);
         foreach (Transform asteroid in asteroids)
         {
             if (asteroid.CompareTag("asteroid"))
@@ -52,6 +53,21 @@ public class RadarController : MonoBehaviour
                 Vector3 spawnPosition = new Vector3(x, y, 0f);
                 if(inside(spawnPosition))
                     Instantiate(pontos[0], spawnPosition, Quaternion.identity, radarContainer.transform);
+            }
+        }
+
+        //inimigos
+        enemies.Clear();
+        enemies = captureChildren(enemiesContainer);
+        foreach (Transform enemy in enemies)
+        {
+            if (enemy.CompareTag("enemy"))
+            {
+                float x = bgX + (enemy.position.x - playerX) * scale;
+                float y = bgY + (enemy.position.y - playerY) * scale;
+                Vector3 spawnPosition = new Vector3(x, y, 0f);
+                if (inside(spawnPosition))
+                    Instantiate(pontos[1], spawnPosition, Quaternion.identity, radarContainer.transform);
             }
         }
     }

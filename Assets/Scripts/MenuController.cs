@@ -38,7 +38,8 @@ public class MenuController : MonoBehaviour
     void Update()
     {
         updateSelectedBtn();
-        AudioListener.volume = volume.value;
+        if(volume != null)
+            AudioListener.volume = volume.value;
     }
     private void soundEffect(AudioClip audio)
     {

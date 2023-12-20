@@ -205,15 +205,16 @@ public class PlayerController : MonoBehaviour
         }
         if (horizontal == 0 && vertical == 0)
         {
-            ani.SetBool("walking1", false);
-            ani.SetBool("walking2", false);
-            ani.Play("idleHorizontal", 0, 0f);
-            float resetY = Mathf.Abs(transform.localScale.y); //Corrige bug do navio de cabeca pra baixo
-            transform.localScale = new Vector3(transform.localScale.x, resetY, transform.localScale.z);
+            if (statusPlayer == "up" || statusPlayer == "down")
+            {
+                //statusPlayer = "right";
+                ani.Play("walkingVerticalStart", 0, 0f);
+            }
+            else
+            {
+                ani.Play("idleHorizontal", 0, 0f);
+            }
             ani.speed = 0; //Desliga os motores rsrs
-            changeCollider(0);
-            if(statusPlayer == "up" || statusPlayer == "down")
-                statusPlayer = "right";
         }
         else
             ani.speed = 1;
