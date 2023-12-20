@@ -143,6 +143,8 @@ public class ShopController : MonoBehaviour
     public void comprarLvl()
     {
         totalDeMoedas -= preco1;
+
+        //vida
         if (player.getLife() == player.getMaxLife())
         {
             player.setLife(player.getLife() + Mathf.Abs((player.getLife() * percentual2 / 10)));
@@ -157,11 +159,17 @@ public class ShopController : MonoBehaviour
             player.setLife(valor);
         }
 
+        //carga
         player.setCarga(player.getCarga() + Mathf.Abs((player.getCarga() * percentual1 / 10)));
 
+        //dano
         gameController.setDano(gameController.getDano() + Mathf.Abs((gameController.getDano() * percentual1 / 10)));
 
+        //velocidade
         player.setSpeed(player.getSpeed() - Mathf.Abs((player.getSpeed() * percentual2 / 10)));
+
+        //tamanho
+        player.increaseSize();
 
         totalDePontos--;
         atualizarRecursos();

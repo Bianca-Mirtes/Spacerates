@@ -95,7 +95,7 @@ public class GameController : MonoBehaviour
             Invoke("DeadPlayer", 1f);
             return;
         }
-        player.GetComponent<PlayerController>().setLife(dano);
+        player.GetComponent<PlayerController>().setLife(player.GetComponent<PlayerController>().getLife() - dano);
     }
     
     private void DeadPlayer()

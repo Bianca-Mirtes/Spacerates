@@ -24,6 +24,7 @@ public class HUDController : MonoBehaviour
     public TextMeshProUGUI pvp;
 
     public Image fillCarga;
+    public Image ataque;
     public Sprite fill1;
     public Sprite fill2;
 
@@ -124,6 +125,21 @@ public class HUDController : MonoBehaviour
                 {
                     objeto.GetComponent<TextMeshProUGUI>().color = escuro;
                 }
+            }
+        }
+    }
+
+    public void hasAttack(bool isAttackTime)
+    {
+        if(ataque != null)
+        {
+            if (ataque.gameObject.activeSelf && !isAttackTime)
+            {
+                ataque.gameObject.SetActive(false);
+            }
+            if (!ataque.gameObject.activeSelf && isAttackTime)
+            {
+                ataque.gameObject.SetActive(true);
             }
         }
     }

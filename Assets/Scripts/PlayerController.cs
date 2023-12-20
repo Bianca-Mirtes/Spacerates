@@ -66,8 +66,9 @@ public class PlayerController : MonoBehaviour
     {
         if (timeBetween <= 0)
         {
+            HUDController.hasAttack(true);
             canAttack = true;
-            timeBetween = 2f;
+            timeBetween = 1.25f;
         }
         else
         {
@@ -81,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
     public void setLife(int value)
     {
-        life -= value;
+        life = value;
     }
 
     public int getMaxLife()
@@ -142,6 +143,11 @@ public class PlayerController : MonoBehaviour
     public void setSpeed(float velocidade)
     {
         speedReference = velocidade;
+    }
+
+    public void increaseSize()
+    {
+        transform.localScale = transform.localScale * 1.2f;
     }
 
     private void Awake()
@@ -419,6 +425,7 @@ public class PlayerController : MonoBehaviour
                     clone.GetComponent<LaserController>().setDirection(3);
                 }
                 canAttack = false;
+                HUDController.hasAttack(false);
             }
         }
     }
@@ -439,9 +446,15 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("enemy"))
         {
+            //enemy batendo
             if (collision.gameObject.GetComponent<EnemyController>().getLvl() > lvl)
             {
                 FindObjectOfType<GameController>().computeAttackEnemy(20);
+            }
+            //player batendo
+            if (collision.gameObject.GetComponent<EnemyController>().getLvl() < lvl)
+            {
+                FindObjectOfType<GameController>().computeAttackPlayer(collision.gameObject, 10);
             }
         }
     }
