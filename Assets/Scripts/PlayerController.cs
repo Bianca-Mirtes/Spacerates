@@ -364,7 +364,7 @@ public class PlayerController : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, buracoNegro, 5f * Time.deltaTime);
 
         //abrir loja
-        if (shopController.gameObject.activeSelf && !shopEnable)
+        if (shopController.transform.GetChild(0).gameObject.activeSelf && !shopEnable)
         {
             shopEnable = true;
         }

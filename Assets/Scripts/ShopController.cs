@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class ShopController : MonoBehaviour
 {
+    public GameObject shop;
+
     public TextMeshProUGUI moedasEPontos;
 
     public TextMeshProUGUI moedas1;
@@ -20,10 +22,7 @@ public class ShopController : MonoBehaviour
     public Button venderMoedas4;
 
     public Button comprar1;
-    //public Button comprar2;
-    //public Button comprar3;
-    //public Button comprar4;
-    //public Button comprar5;
+    public TextMeshProUGUI precoDoNivel;
 
     public Color enableColor;
     public Color disableColor;
@@ -34,13 +33,15 @@ public class ShopController : MonoBehaviour
     private bool shopEnable = false;
     private int valor1, valor2, valor3, valor4;
 
-    public int preco1;
+    private int preco;
 
     public int percentual1;
     public int percentual2;
 
     private int totalDeMoedas;
     private int totalDePontos;
+
+    private int moedasAReceber;
 
     // Start is called before the first frame update
     void Start()
@@ -53,15 +54,32 @@ public class ShopController : MonoBehaviour
         totalDeMoedas = 0;
         totalDePontos = 0;
         atualizarRecursos();
-        gameObject.SetActive(false);
+        shop.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         gameController = FindObjectOfType<GameController>().GetComponent<GameController>();
         HUDController = FindObjectOfType<HUDController>().GetComponent<HUDController>();
+
+        preco = 24;
+        setPreco();
+    }
+
+    private void setPreco()
+    {
+        precoDoNivel.text = preco + " moedas e 1 ponto de XP";
     }
 
     // Update is called once per frame
     void Update()
     {
+        int oldMoedasAReceber = moedasAReceber;
+        moedasAReceber = player.getGemNumber(1) * valor1 + player.getGemNumber(2) * valor2
+                       + player.getGemNumber(3) * valor3 + player.getGemNumber(4) * valor4;
+
+        if (totalDePontos > 0 && (moedasAReceber > oldMoedasAReceber) && moedasAReceber + totalDeMoedas >= preco)
+        {
+            enabledShop();
+        }
+
         if (shopEnable)
         {
             moedas1.text = player.getGemNumber(1) * valor1 + " moeda(s)";
@@ -74,11 +92,7 @@ public class ShopController : MonoBehaviour
             enableBtnVenda(player.getGemNumber(3), venderMoedas3);
             enableBtnVenda(player.getGemNumber(4), venderMoedas4);
 
-            enableBtnCompra(preco1, comprar1);
-            //enableBtnCompra(preco2, comprar2);
-            //enableBtnCompra(preco3, comprar3);
-            //enableBtnCompra(preco4, comprar4);
-            //enableBtnCompra(preco5, comprar5);
+            enableBtnCompra(preco, comprar1);
         }
     }
 
@@ -103,11 +117,27 @@ public class ShopController : MonoBehaviour
         {
             btn.interactable = false;
             btn.GetComponentInChildren<TextMeshProUGUI>().color = disableColor;
+            foreach (Transform child in btn.transform)
+            {
+                TextMeshProUGUI textMesh = child.GetComponent<TextMeshProUGUI>();
+                if (textMesh != null)
+                {
+                    textMesh.color = disableColor;
+                }
+            }
         }
         else
         {
             btn.interactable = true;
             btn.GetComponentInChildren<TextMeshProUGUI>().color = enableColor;
+            foreach (Transform child in btn.transform)
+            {
+                TextMeshProUGUI textMesh = child.GetComponent<TextMeshProUGUI>();
+                if (textMesh != null)
+                {
+                    textMesh.color = enableColor;
+                }
+            }
         }
 
     }
@@ -144,7 +174,7 @@ public class ShopController : MonoBehaviour
 
     public void comprarLvl()
     {
-        totalDeMoedas -= preco1;
+        totalDeMoedas -= preco;
 
         //vida
         if (player.getLife() == player.getMaxLife())
@@ -171,6 +201,8 @@ public class ShopController : MonoBehaviour
         player.increaseSize();
 
         totalDePontos--;
+        preco = Mathf.Abs((int)(preco * 1.5f));
+        setPreco();
         atualizarRecursos();
     }
 
@@ -187,14 +219,14 @@ public class ShopController : MonoBehaviour
 
     public void enabledShop()
     {
-        gameObject.SetActive(true);
+        shop.SetActive(true);
         shopEnable = true;
         HUDController.desligarAtalhos();
     }
 
     public void disabledShop()
     {
-        gameObject.SetActive(false);
+        shop.SetActive(false);
         shopEnable = false;
     }
 }

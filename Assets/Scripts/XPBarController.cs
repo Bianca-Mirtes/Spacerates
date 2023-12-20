@@ -29,7 +29,7 @@ public class XPBarController : MonoBehaviour
             gameObject.GetComponent<Slider>().maxValue = valorMax + incremento;
 
             //CHAMAR LOJINHA
-            shopController.enabledShop();
+            //shopController.enabledShop();
 
             //Reset
             shopController.addPoint();

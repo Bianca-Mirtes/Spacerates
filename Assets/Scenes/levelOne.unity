@@ -328,7 +328,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: comprar
         m_Mode: 3
@@ -340,7 +340,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: disableBtnCompra
         m_Mode: 2
@@ -2452,7 +2452,7 @@ MonoBehaviour:
   branco: {r: 1, g: 1, b: 1, a: 1}
   escuro: {r: 0.47084048, g: 0.45990565, b: 0.5, a: 1}
   atalhos: {fileID: 158293791}
-  shopController: {fileID: 1091657538}
+  shopController: {fileID: 0}
 --- !u!1001 &339937283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2609,7 +2609,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 1007157349}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: vender
         m_Mode: 3
@@ -3676,7 +3676,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: comprar
         m_Mode: 3
@@ -3688,7 +3688,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: disableBtnCompra
         m_Mode: 2
@@ -9200,7 +9200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HUDController: {fileID: 327957178}
-  shopController: {fileID: 1091657538}
+  shopController: {fileID: 1007157349}
   localSpawn1: {fileID: 132856717}
   localSpawn2: {fileID: 805871959}
   localSpawn3: {fileID: 894395015}
@@ -9544,7 +9544,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 1007157349}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: vender
         m_Mode: 3
@@ -12477,6 +12477,71 @@ Transform:
   - {fileID: 1219300509}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1007157347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1007157348}
+  - component: {fileID: 1007157349}
+  m_Layer: 5
+  m_Name: ShopController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1007157348
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007157347}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1091657535}
+  m_Father: {fileID: 2139094624}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -235.29999}
+  m_SizeDelta: {x: 634.5, y: 386}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1007157349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007157347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd04bed15be32346b2b350c237d5beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shop: {fileID: 1091657534}
+  moedasEPontos: {fileID: 1055969953}
+  moedas1: {fileID: 1237756843}
+  moedas2: {fileID: 1436165177}
+  moedas3: {fileID: 393727805}
+  moedas4: {fileID: 905849824}
+  venderMoedas1: {fileID: 1481434794}
+  venderMoedas2: {fileID: 344956954}
+  venderMoedas3: {fileID: 600356768}
+  venderMoedas4: {fileID: 1171279704}
+  comprar1: {fileID: 1970747472}
+  precoDoNivel: {fileID: 1612433004}
+  enableColor: {r: 1, g: 1, b: 1, a: 1}
+  disableColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 0.8627451}
+  percentual1: 2
+  percentual2: 3
 --- !u!4 &1027056816 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7031325297409249077, guid: 03d0b3ad54a2be5448060a2567ab5bda, type: 3}
@@ -12972,9 +13037,8 @@ GameObject:
   - component: {fileID: 1091657535}
   - component: {fileID: 1091657537}
   - component: {fileID: 1091657536}
-  - component: {fileID: 1091657538}
   m_Layer: 5
-  m_Name: ShopController
+  m_Name: Shop
   m_TagString: HUD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12987,7 +13051,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091657534}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12996,11 +13060,11 @@ RectTransform:
   - {fileID: 975967843}
   - {fileID: 325270599}
   - {fileID: 1515803425}
-  m_Father: {fileID: 2139094624}
+  m_Father: {fileID: 1007157348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -235.3}
+  m_AnchoredPosition: {x: 0, y: -0.000015258789}
   m_SizeDelta: {x: 634.5, y: 386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1091657536
@@ -13041,33 +13105,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091657534}
   m_CullTransparentMesh: 1
---- !u!114 &1091657538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091657534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd04bed15be32346b2b350c237d5beb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moedasEPontos: {fileID: 1055969953}
-  moedas1: {fileID: 1237756843}
-  moedas2: {fileID: 1436165177}
-  moedas3: {fileID: 393727805}
-  moedas4: {fileID: 905849824}
-  venderMoedas1: {fileID: 1481434794}
-  venderMoedas2: {fileID: 344956954}
-  venderMoedas3: {fileID: 600356768}
-  venderMoedas4: {fileID: 1171279704}
-  comprar1: {fileID: 1970747472}
-  enableColor: {r: 1, g: 1, b: 1, a: 1}
-  disableColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 0.8627451}
-  preco1: 15
-  percentual1: 2
-  percentual2: 3
 --- !u!1 &1118436983
 GameObject:
   m_ObjectHideFlags: 0
@@ -13538,7 +13575,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 1007157349}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: vender
         m_Mode: 3
@@ -13842,7 +13879,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: comprar
         m_Mode: 3
@@ -13854,7 +13891,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: disableBtnCompra
         m_Mode: 2
@@ -14467,7 +14504,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: comprar
         m_Mode: 3
@@ -14479,7 +14516,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: disableBtnCompra
         m_Mode: 2
@@ -15033,7 +15070,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: comprar
         m_Mode: 3
@@ -15045,7 +15082,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: disableBtnCompra
         m_Mode: 2
@@ -15807,7 +15844,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 1007157349}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: vender
         m_Mode: 3
@@ -18933,7 +18970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   total: 100
   incremento: 20
-  shopController: {fileID: 1091657538}
+  shopController: {fileID: 1007157349}
 --- !u!114 &1778037427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20335,7 +20372,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 1007157349}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: comprarLvl
         m_Mode: 1
@@ -20347,7 +20384,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1091657538}
+      - m_Target: {fileID: 1007157349}
         m_TargetAssemblyTypeName: ShopController, Assembly-CSharp
         m_MethodName: disableBtnCompra
         m_Mode: 2
@@ -21143,7 +21180,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1666956056}
-  - {fileID: 1091657535}
+  - {fileID: 1007157348}
   - {fileID: 18319151}
   - {fileID: 1418660583}
   - {fileID: 465108163}

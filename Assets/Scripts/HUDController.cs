@@ -78,7 +78,8 @@ public class HUDController : MonoBehaviour
 
     public void changeSpeed(float speed)
     {
-        velocidadeAtual.text = "Velocidade: "+speed;
+        float speedHUD = speed * 100 / 3;
+        velocidadeAtual.text = "Velocidade: "+ speedHUD+" km/h";
     }
 
     public void setCarga(float cargaAtual, float cargaTotal)
