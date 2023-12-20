@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
     public void setLife(int value)
     {
-        life = value;
+        life -= value;
     }
 
     public int getMaxLife()
@@ -409,7 +409,6 @@ public class PlayerController : MonoBehaviour
         {
             FindObjectOfType<GameController>().computeAttackEnemy(20);
             Destroy(collision.gameObject);
-            //Destroy(gameObject);
         }
         if (collision.gameObject.layer == 9)
         {

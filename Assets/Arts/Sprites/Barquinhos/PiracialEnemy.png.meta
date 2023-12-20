@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: d1aa0a7f5812b6e12b28b50d1c23def7
-=======
-<<<<<<< HEAD
-guid: 48d921e1878506449a46adbf7128d810
-=======
-guid: b5c2dc599d4f540459f1f60ae7835d3f
->>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
->>>>>>> c46fc8b61774b18bc73acf8f02c13fe4d3db2bd1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,32 +34,16 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
     filterMode: 1
-=======
-<<<<<<< HEAD
-    filterMode: 0
-=======
-    filterMode: 1
->>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
->>>>>>> c46fc8b61774b18bc73acf8f02c13fe4d3db2bd1
     aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
-  spriteMode: 1
-=======
-<<<<<<< HEAD
   spriteMode: 2
-=======
-  spriteMode: 1
->>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
->>>>>>> c46fc8b61774b18bc73acf8f02c13fe4d3db2bd1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -87,16 +63,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,7 +98,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -132,19 +108,15 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD
-    sprites: []
-=======
-<<<<<<< HEAD
     sprites:
     - serializedVersion: 2
       name: PiracialEnemy_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 33
-        width: 120
-        height: 104
+        x: 0
+        y: 32
+        width: 134
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bba7dbd63fb5f8e40b9a203d007faa4c
-      internalID: 348097596
+      spriteID: 0672ee86c44cc0f48a1229875b02e20c
+      internalID: 1321375665
       vertices: []
       indices: 
       edges: []
@@ -162,10 +134,10 @@ TextureImporter:
       name: PiracialEnemy_1
       rect:
         serializedVersion: 2
-        x: 164
-        y: 33
-        width: 121
-        height: 104
+        x: 163
+        y: 32
+        width: 122
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd5d79108e222244ca48981352629cd7
-      internalID: -344974376
+      spriteID: 68eea543811181c45a70539e8586a441
+      internalID: 576859879
       vertices: []
       indices: 
       edges: []
@@ -183,10 +155,10 @@ TextureImporter:
       name: PiracialEnemy_2
       rect:
         serializedVersion: 2
-        x: 314
-        y: 33
-        width: 128
-        height: 104
+        x: 313
+        y: 32
+        width: 129
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1b251dd3d547ef4a93402a0b977149c
-      internalID: -146782507
+      spriteID: 54cfd3cdf50f9814499e2d8cb009f960
+      internalID: -1032482783
       vertices: []
       indices: 
       edges: []
@@ -204,10 +176,10 @@ TextureImporter:
       name: PiracialEnemy_3
       rect:
         serializedVersion: 2
-        x: 464
-        y: 33
-        width: 131
-        height: 104
+        x: 463
+        y: 32
+        width: 133
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f1ad5fc0d3e5304aba708458330ade4
-      internalID: -1888996689
+      spriteID: 1086957b92ec76d4c96ce3913cd5d1ee
+      internalID: -482765589
       vertices: []
       indices: 
       edges: []
@@ -225,10 +197,10 @@ TextureImporter:
       name: PiracialEnemy_4
       rect:
         serializedVersion: 2
-        x: 614
-        y: 33
-        width: 137
-        height: 104
+        x: 613
+        y: 32
+        width: 139
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 314cd49d8be93244aa14c405d9e6100c
-      internalID: 1264871816
+      spriteID: 2fa672b4c60619144af57ec24af6686e
+      internalID: -1448813210
       vertices: []
       indices: 
       edges: []
@@ -246,10 +218,10 @@ TextureImporter:
       name: PiracialEnemy_5
       rect:
         serializedVersion: 2
-        x: 764
-        y: 33
-        width: 137
-        height: 104
+        x: 763
+        y: 32
+        width: 139
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e105912a8f72af4f85cf023981586ac
-      internalID: 1840484538
+      spriteID: 3576af7481a610a43bbe7fd484893845
+      internalID: -1798650408
       vertices: []
       indices: 
       edges: []
@@ -267,10 +239,10 @@ TextureImporter:
       name: PiracialEnemy_6
       rect:
         serializedVersion: 2
-        x: 914
-        y: 33
-        width: 137
-        height: 104
+        x: 913
+        y: 32
+        width: 139
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43e221a9e4eafe44eb1ef31e50d13271
-      internalID: -1847019351
+      spriteID: 4cfccd48ba1ddc64e8062b18c16b2822
+      internalID: 622116517
       vertices: []
       indices: 
       edges: []
@@ -288,10 +260,10 @@ TextureImporter:
       name: PiracialEnemy_7
       rect:
         serializedVersion: 2
-        x: 1064
-        y: 33
-        width: 137
-        height: 104
+        x: 1063
+        y: 32
+        width: 139
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04c3c7f4708431b45b78b92d8b485342
-      internalID: -1058461842
+      spriteID: d93ea73544b622348bce384a2f20e532
+      internalID: 1277795551
       vertices: []
       indices: 
       edges: []
@@ -309,10 +281,10 @@ TextureImporter:
       name: PiracialEnemy_8
       rect:
         serializedVersion: 2
-        x: 1214
-        y: 33
-        width: 136
-        height: 104
+        x: 1213
+        y: 32
+        width: 138
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58ac21b29b71ebc43b1b043e87c473e8
-      internalID: 289827031
+      spriteID: eaa204aa3267a104c83632276e739c49
+      internalID: -1115029697
       vertices: []
       indices: 
       edges: []
@@ -330,10 +302,10 @@ TextureImporter:
       name: PiracialEnemy_9
       rect:
         serializedVersion: 2
-        x: 1364
-        y: 33
-        width: 136
-        height: 104
+        x: 1363
+        y: 32
+        width: 138
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 341404bea84014f49a230201aebdbb6a
-      internalID: 1796046026
+      spriteID: 990b5c8a153e37f429a844a3fce24881
+      internalID: -340605615
       vertices: []
       indices: 
       edges: []
@@ -351,10 +323,10 @@ TextureImporter:
       name: PiracialEnemy_10
       rect:
         serializedVersion: 2
-        x: 1514
-        y: 33
-        width: 132
-        height: 104
+        x: 1513
+        y: 32
+        width: 134
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,8 +334,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2e2af88649b18242a7e0ae1d27c940a
-      internalID: -1384218304
+      spriteID: ff21da56e1cbae94ea12f48b56465bc7
+      internalID: 1947308446
       vertices: []
       indices: 
       edges: []
@@ -372,10 +344,10 @@ TextureImporter:
       name: PiracialEnemy_11
       rect:
         serializedVersion: 2
-        x: 1664
-        y: 33
-        width: 137
-        height: 104
+        x: 1663
+        y: 32
+        width: 139
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,8 +355,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 913516596ded47a409424916fa7dd150
-      internalID: 101192084
+      spriteID: 2aa9a305b16f2c54491b70f753e3ecbd
+      internalID: -165086256
       vertices: []
       indices: 
       edges: []
@@ -393,10 +365,10 @@ TextureImporter:
       name: PiracialEnemy_12
       rect:
         serializedVersion: 2
-        x: 1814
-        y: 33
-        width: 137
-        height: 104
+        x: 1813
+        y: 32
+        width: 139
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,8 +376,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76eff023d4474ad47b0663ac89af1c01
-      internalID: 1988047661
+      spriteID: c85e1e62e3240c041b99d8138bef3512
+      internalID: -439133001
       vertices: []
       indices: 
       edges: []
@@ -414,10 +386,10 @@ TextureImporter:
       name: PiracialEnemy_13
       rect:
         serializedVersion: 2
-        x: 1964
-        y: 33
-        width: 137
-        height: 104
+        x: 1963
+        y: 32
+        width: 139
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,8 +397,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 064ad414dbf26294297778af3b82cefc
-      internalID: -1455645284
+      spriteID: 633df6c917f729243a99972ad8c50b24
+      internalID: -1925809235
       vertices: []
       indices: 
       edges: []
@@ -435,10 +407,10 @@ TextureImporter:
       name: PiracialEnemy_14
       rect:
         serializedVersion: 2
-        x: 2114
-        y: 33
-        width: 132
-        height: 104
+        x: 2113
+        y: 32
+        width: 134
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,8 +418,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 626c3368107487e4d83fdbcdfa55e908
-      internalID: -1109294855
+      spriteID: a7456a2fdf8040e43909a6c4114c498c
+      internalID: 720406849
       vertices: []
       indices: 
       edges: []
@@ -456,10 +428,10 @@ TextureImporter:
       name: PiracialEnemy_15
       rect:
         serializedVersion: 2
-        x: 2264
-        y: 33
-        width: 136
-        height: 104
+        x: 2263
+        y: 32
+        width: 137
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,51 +439,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 523a101b036bb4d468b5cb05156e09f5
-      internalID: 1567256462
+      spriteID: 51ba7998025f18842bfec66c3a427632
+      internalID: 1093276832
       vertices: []
       indices: 
       edges: []
       weights: []
-=======
-    sprites: []
->>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
->>>>>>> c46fc8b61774b18bc73acf8f02c13fe4d3db2bd1
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 6e5202efc322e9648b7c41542c186cd8
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-<<<<<<< HEAD
-    nameFileIdTable: {}
-=======
-<<<<<<< HEAD
     nameFileIdTable:
-      PiracialEnemy_0: 348097596
-      PiracialEnemy_1: -344974376
-      PiracialEnemy_10: -1384218304
-      PiracialEnemy_11: 101192084
-      PiracialEnemy_12: 1988047661
-      PiracialEnemy_13: -1455645284
-      PiracialEnemy_14: -1109294855
-      PiracialEnemy_15: 1567256462
-      PiracialEnemy_2: -146782507
-      PiracialEnemy_3: -1888996689
-      PiracialEnemy_4: 1264871816
-      PiracialEnemy_5: 1840484538
-      PiracialEnemy_6: -1847019351
-      PiracialEnemy_7: -1058461842
-      PiracialEnemy_8: 289827031
-      PiracialEnemy_9: 1796046026
-=======
-    nameFileIdTable: {}
->>>>>>> afa61ef39fc63655d7495ffe037b221bab919bb2
->>>>>>> c46fc8b61774b18bc73acf8f02c13fe4d3db2bd1
+      PiracialEnemy_0: 1321375665
+      PiracialEnemy_1: 576859879
+      PiracialEnemy_10: 1947308446
+      PiracialEnemy_11: -165086256
+      PiracialEnemy_12: -439133001
+      PiracialEnemy_13: -1925809235
+      PiracialEnemy_14: 720406849
+      PiracialEnemy_15: 1093276832
+      PiracialEnemy_2: -1032482783
+      PiracialEnemy_3: -482765589
+      PiracialEnemy_4: -1448813210
+      PiracialEnemy_5: -1798650408
+      PiracialEnemy_6: 622116517
+      PiracialEnemy_7: 1277795551
+      PiracialEnemy_8: -1115029697
+      PiracialEnemy_9: -340605615
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

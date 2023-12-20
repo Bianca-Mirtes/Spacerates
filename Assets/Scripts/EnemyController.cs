@@ -1,23 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Windows;
 
 public class EnemyController : MonoBehaviour
 {
-    private int life = 80;
     private int xpGenerated = 10;
     private int dano = 20;
+    private Slider life;
+
     private string[] opcoes = { "right", "left", "up", "down" };
     private string status = "right";
-    private float timeBetween = 4f;
+    private float timeBetween = 3f;
     private bool canAttack = true;
-    public GameObject laser1;
+    
     private Transform player;
-
+    private float coordX;
+    private float coordY;
+    
     private float distanceFollow = 7f, distancePerception = 15f, distanceAttack = 1.5f;
-
-    private float timeForAttack = 1.5f;
     private float distanceForPlayer, distanceForAIPoint;
 
     public Transform[] destinyRandow;
@@ -31,11 +33,12 @@ public class EnemyController : MonoBehaviour
     private Vector3 localSpawn4;
 
     public GameObject spawner;
-
+    public GameObject laser1;
     // Start is called before the first frame update
     void Start()
     {
-        ani = GetComponent<Animator>();
+        life = transform.GetChild(0).GetChild(0).GetComponent<Slider>();
+        //ani = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         AIPointCurrent = Random.Range(0, destinyRandow.Length);
         Instantiate(spawner, new Vector3(transform.position.x + 0.3f, transform.position.y - 0.2f, transform.position.z), Quaternion.identity);
@@ -44,9 +47,23 @@ public class EnemyController : MonoBehaviour
         Instantiate(spawner, new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z), Quaternion.identity);
     }
 
+    private void Dead()
+    {
+        // animação de morte
+        // som de morte
+        Destroy(gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if(life.value == 0)
+        {
+            Invoke("Dead", 1f);
+            return;
+        }
+        coordX = player.transform.position.x;
+        coordY = player.transform.position.y;
         status = opcoes[Random.Range(0, 4)];
         UpdatePositionSpawners();
         verifAttack();
@@ -60,7 +77,7 @@ public class EnemyController : MonoBehaviour
         }
         if (distanceForPlayer <= distanceFollow) // para verificar se o inimigo pode seguir o player
         {
-            ani.SetBool("walking1", true);
+            //ani.SetBool("walking1", true);
             Follow();
             followSomething = true;
         }
@@ -83,23 +100,23 @@ public class EnemyController : MonoBehaviour
     {
         if (canAttack)
         {
-            if (status.Equals("right"))
+            if (status.Equals("right") && (coordX > Mathf.Abs(transform.position.x) && coordY == Mathf.Abs(transform.position.y)))
             {
                 GameObject clone = Instantiate(laser1, localSpawn1, Quaternion.identity);
                 clone.GetComponent<LaserController>().setDirection(0);
             }
-            else if (status.Equals("left"))
+            else if (status.Equals("left") && (coordX < Mathf.Abs(transform.position.x) && coordY == Mathf.Abs(transform.position.y)))
             {
                 GameObject clone = Instantiate(laser1, localSpawn2, Quaternion.identity);
                 clone.GetComponent<LaserController>().setDirection(1);
             }
-            else if (status.Equals("up"))
+            else if (status.Equals("up") && (coordX == Mathf.Abs(transform.position.x) && coordY > Mathf.Abs(transform.position.y)))
             {
                 GameObject clone = Instantiate(laser1, localSpawn3, Quaternion.identity);
                 clone.GetComponent<LaserController>().setDirection(2);
                 clone.transform.Rotate(new Vector3(0f, 0f, 90f));
             }
-            else if (status.Equals("down"))
+            else if (status.Equals("down") && (coordX == Mathf.Abs(transform.position.x) && coordY < Mathf.Abs(transform.position.y)))
             {
                 GameObject clone = Instantiate(laser1, localSpawn4, Quaternion.identity);
                 clone.GetComponent<LaserController>().setDirection(3);
@@ -110,7 +127,7 @@ public class EnemyController : MonoBehaviour
 
     void Walking()
     {
-        ani.SetBool("walking1", false);
+        //ani.SetBool("walking1", false);
         if (!followSomething)
         {
             transform.position = Vector3.MoveTowards(transform.position, destinyRandow[AIPointCurrent].transform.position, 0.8f * Time.deltaTime);
@@ -130,7 +147,7 @@ public class EnemyController : MonoBehaviour
         if (timeBetween <= 0)
         {
             canAttack = true;
-            timeBetween = 4f;
+            timeBetween = 3f;
         }
         else
         {
@@ -144,7 +161,7 @@ public class EnemyController : MonoBehaviour
     }
     public void setLife(int value)
     {
-        life -= value; 
+        life.value -= value;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -152,7 +169,6 @@ public class EnemyController : MonoBehaviour
         {
             FindObjectOfType<GameController>().computeAttackPlayer(gameObject, xpGenerated);
             Destroy(collision.gameObject);
-            Destroy(gameObject);
         }
     }
 }

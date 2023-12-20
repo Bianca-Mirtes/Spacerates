@@ -21,7 +21,6 @@ public class MenuController : MonoBehaviour
     private GameObject btnSelected;
 
     public AudioClip musicTheme;
-    public AudioClip selectionSound;
     public AudioClip moveSound;
 
     // Start is called before the first frame update
@@ -44,10 +43,6 @@ public class MenuController : MonoBehaviour
     private void soundEffect(AudioClip audio)
     {
         menuPainel.GetComponent<AudioSource>().PlayOneShot(audio);
-    }
-    private void soundEffect(AudioClip audio, int idButton)
-    {
-        menuPainel.GetChild(idButton).GetComponent<AudioSource>().PlayOneShot(audio);
     }
 
     private void updateSelectedBtn()
@@ -82,19 +77,16 @@ public class MenuController : MonoBehaviour
 
     public void playGame()
     {
-        soundEffect(selectionSound, 0);
         SceneManager.LoadScene(1);
     }
 
     public void loadMenu()
     {
-        soundEffect(selectionSound);
         SceneManager.LoadScene(0);
     }
 
     public void exit()
     {
-        soundEffect(selectionSound, 2);
         Application.Quit();
     }
 }

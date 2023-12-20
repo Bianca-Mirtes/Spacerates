@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public HUDController HUDController;
+    public LifeBarController lifePlayer;
     public CombatController combatController;
     public GameObject background;
     public AudioClip backgroundSound;
@@ -50,16 +51,16 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool isAlive = player.GetComponent<PlayerController>().getLife() > 0;
         bool blackHole = player.GetComponent<PlayerController>().getBlackHole();
-        if (!isAlive || blackHole)
+        if (blackHole)
         {
+            //som de sendo sugado pelo buraco negro
             SceneManager.LoadScene(2);
         }
 
         if(combatController.getPlayersNum() == 0)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
     }
 
@@ -82,9 +83,19 @@ public class GameController : MonoBehaviour
 
     public void computeAttackEnemy(int dano)
     {
-        player.GetComponent<PlayerController>().setLife(player.GetComponent<PlayerController>().getLife() - dano);
+        if(player.GetComponent<PlayerController>().getLife() == 0)
+        {
+            Invoke("DeadPlayer", 1f);
+            return;
+        }
+        player.GetComponent<PlayerController>().setLife(dano);
     }
-
+    
+    private void DeadPlayer()
+    {
+        // som da morte do player (por laser - explosão)
+        SceneManager.LoadScene(2);
+    }
     public void updateJewels(string joia)
     {
         PlayerController playerController = player.GetComponent<PlayerController>();

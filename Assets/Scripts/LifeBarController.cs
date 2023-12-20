@@ -9,7 +9,7 @@ public class LifeBarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<Slider>().value = 100;
+        GetComponent<Slider>().value = 100;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
