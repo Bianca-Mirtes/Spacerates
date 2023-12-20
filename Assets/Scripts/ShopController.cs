@@ -30,6 +30,7 @@ public class ShopController : MonoBehaviour
 
     private PlayerController player;
     private GameController gameController;
+    private HUDController HUDController;
     private bool shopEnable = false;
     private int valor1, valor2, valor3, valor4;
 
@@ -55,6 +56,7 @@ public class ShopController : MonoBehaviour
         gameObject.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         gameController = FindObjectOfType<GameController>().GetComponent<GameController>();
+        HUDController = FindObjectOfType<HUDController>().GetComponent<HUDController>();
     }
 
     // Update is called once per frame
@@ -190,6 +192,7 @@ public class ShopController : MonoBehaviour
     {
         gameObject.SetActive(true);
         shopEnable = true;
+        HUDController.desligarAtalhos();
     }
 
     public void disabledShop()

@@ -33,6 +33,9 @@ public class HUDController : MonoBehaviour
 
     private int nivelAtual = 1;
 
+    public GameObject atalhos;
+    public ShopController shopController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -142,6 +145,24 @@ public class HUDController : MonoBehaviour
                 ataque.gameObject.SetActive(true);
             }
         }
+    }
+
+    public void exibirAtalhos()
+    {
+        if (!atalhos.activeSelf)
+        {
+            shopController.disabledShop();
+            atalhos.gameObject.SetActive(true);
+        }
+        else if(atalhos.activeSelf)
+        {
+            desligarAtalhos();
+        }
+    }
+
+    public void desligarAtalhos()
+    {
+        atalhos.gameObject.SetActive(false);
     }
 
     public void pvpOn()
