@@ -136,11 +136,11 @@ public class HUDController : MonoBehaviour
     {
         if(ataque != null)
         {
-            if (ataque.gameObject.activeSelf && !isAttackTime)
+            if (!isAttackTime)
             {
                 ataque.gameObject.SetActive(false);
             }
-            if (!ataque.gameObject.activeSelf && isAttackTime)
+            if (isAttackTime)
             {
                 ataque.gameObject.SetActive(true);
             }

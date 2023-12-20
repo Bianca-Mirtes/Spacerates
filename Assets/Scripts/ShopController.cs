@@ -154,10 +154,7 @@ public class ShopController : MonoBehaviour
         }else if(player.getLife() < player.getMaxLife())
         {
             int valor = player.getLife() + Mathf.Abs((player.getLife() * percentual2 / 10));
-            if(valor > player.getMaxLife())
-            {
-                valor = player.getMaxLife();
-            }
+            valor = Mathf.Max(valor, 0);
             player.setLife(valor);
         }
 

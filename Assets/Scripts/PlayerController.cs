@@ -47,6 +47,11 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 buracoNegro = Vector2.zero;
     private int lvl = 1;
+    private float speedRun = 3;
+    private Coroutine encherSpeedRunCoroutine = null;
+    private bool isSpeedRun = false;
+    public float velocidadeEspecial;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -143,6 +148,11 @@ public class PlayerController : MonoBehaviour
     public void setSpeed(float velocidade)
     {
         speedReference = velocidade;
+    }
+
+    public void setSpeedRun(float velocidade)
+    {
+        speed = velocidade;
     }
 
     public void increaseSize()
@@ -371,7 +381,31 @@ public class PlayerController : MonoBehaviour
                 shopEnable = true;
             }
         }
-        
+
+        if (input.Player.SpeedRun.IsPressed())
+        {
+            isSpeedRun = true;
+            if(speedRun > 0)
+                setSpeedRun(speedReference * velocidadeEspecial);
+            else
+                setSpeedRun(speedReference);
+
+            if (encherSpeedRunCoroutine != null)
+                StopCoroutine(encherSpeedRunCoroutine);
+            speedRun -= 0.1f;
+            speedRun = Mathf.Max(speedRun, 0.0f);
+
+            if (IsInvoking("encher"))
+            {
+                CancelInvoke("encher");
+            }
+        }
+        else
+        {
+            if(isSpeedRun)
+                Invoke("encher", 1.0f);
+            isSpeedRun = false;
+        }
 
         //mecanica de reduzir velocidade com peso
         if (cargaAtual > carga)
@@ -386,10 +420,37 @@ public class PlayerController : MonoBehaviour
         }
         else if (speed != speedReference)
         {
-            speed = speedReference;
-            HUDController.changeSpeed(speed);
-            coletaEnable = true;
+            if (!isSpeedRun)
+            {
+                speed = speedReference;
+                HUDController.changeSpeed(speed);
+                coletaEnable = true;
+            }
         }
+    }
+
+    private void encher()
+    {
+        encherSpeedRunCoroutine = StartCoroutine(encherSpeedRun());
+    }
+
+    IEnumerator encherSpeedRun()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            speedRun += 0.1f;
+            speedRun = Mathf.Min(speedRun, 3f);
+            if (speedRun == 5f)
+            {
+                break;
+            }
+        }  
+    }
+
+    public float getSpeedRun()
+    {
+        return speedRun;
     }
 
     public bool getBlackHole()

@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Speed:'
+  m_text: 'Speed run:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d42738955fd3e674592b227aea1c09a9, type: 2}
   m_sharedMaterial: {fileID: 7201739424206362684, guid: d42738955fd3e674592b227aea1c09a9, type: 2}
@@ -2446,7 +2446,7 @@ MonoBehaviour:
   jogadores: {fileID: 883685851}
   pvp: {fileID: 1694981130}
   fillCarga: {fileID: 1923326996}
-  ataque: {fileID: 0}
+  ataque: {fileID: 97611008}
   fill1: {fileID: 21300000, guid: 2329cf4562a4a264497862b82c2e4dd8, type: 3}
   fill2: {fileID: 21300000, guid: cbbdadd748b267442bcc914b9313df25, type: 3}
   branco: {r: 1, g: 1, b: 1, a: 1}
@@ -9210,6 +9210,7 @@ MonoBehaviour:
   laser1: {fileID: 9206066640534269327, guid: 5cee9be58ec348846b047ba9a5a5f87c, type: 3}
   speed: 3
   laserSound: {fileID: 8300000, guid: 2badbc16d27f9a0429f802741b5edfdb, type: 3}
+  velocidadeEspecial: 3.5
 --- !u!95 &593884694
 Animator:
   serializedVersion: 5
@@ -9883,6 +9884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 697827518}
   - component: {fileID: 697827519}
+  - component: {fileID: 697827520}
   m_Layer: 5
   m_Name: Slider
   m_TagString: HUD
@@ -9909,8 +9911,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.21, y: 0}
-  m_SizeDelta: {x: 250.7553, y: 37.4382}
+  m_AnchoredPosition: {x: 22.3492, y: -1.7}
+  m_SizeDelta: {x: 220.4769, y: 37.4382}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697827519
 MonoBehaviour:
@@ -9951,18 +9953,30 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 594155949}
   m_FillRect: {fileID: 1687698576}
   m_HandleRect: {fileID: 594155948}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 200
-  m_WholeNumbers: 1
-  m_Value: 150
+  m_MaxValue: 3
+  m_WholeNumbers: 0
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &697827520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697827517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c5395738c3ba742bf723e145720797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &709834346
 GameObject:
   m_ObjectHideFlags: 0
@@ -14561,8 +14575,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -4.9999924, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 2.5, y: 0}
+  m_SizeDelta: {x: -5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1344417790
 GameObject:
@@ -17817,8 +17831,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_AnchoredPosition: {x: -2.5, y: 0}
+  m_SizeDelta: {x: 5.0001, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1687698577
 MonoBehaviour:

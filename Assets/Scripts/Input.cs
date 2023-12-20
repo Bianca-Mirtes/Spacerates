@@ -71,6 +71,15 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpeedRun"",
+                    ""type"": ""Button"",
+                    ""id"": ""23cd7f40-9b1b-4958-ad10-b42c07086fea"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -238,6 +247,17 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""action"": ""Loja"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a992118d-59d5-44a4-955a-3f8709640393"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpeedRun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -251,6 +271,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Coleta = m_Player.FindAction("Coleta", throwIfNotFound: true);
         m_Player_Loja = m_Player.FindAction("Loja", throwIfNotFound: true);
+        m_Player_SpeedRun = m_Player.FindAction("SpeedRun", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -317,6 +338,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Coleta;
     private readonly InputAction m_Player_Loja;
+    private readonly InputAction m_Player_SpeedRun;
     public struct PlayerActions
     {
         private @Input m_Wrapper;
@@ -326,6 +348,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Coleta => m_Wrapper.m_Player_Coleta;
         public InputAction @Loja => m_Wrapper.m_Player_Loja;
+        public InputAction @SpeedRun => m_Wrapper.m_Player_SpeedRun;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -350,6 +373,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Loja.started += instance.OnLoja;
             @Loja.performed += instance.OnLoja;
             @Loja.canceled += instance.OnLoja;
+            @SpeedRun.started += instance.OnSpeedRun;
+            @SpeedRun.performed += instance.OnSpeedRun;
+            @SpeedRun.canceled += instance.OnSpeedRun;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -369,6 +395,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Loja.started -= instance.OnLoja;
             @Loja.performed -= instance.OnLoja;
             @Loja.canceled -= instance.OnLoja;
+            @SpeedRun.started -= instance.OnSpeedRun;
+            @SpeedRun.performed -= instance.OnSpeedRun;
+            @SpeedRun.canceled -= instance.OnSpeedRun;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -393,5 +422,6 @@ public partial class @Input: IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnColeta(InputAction.CallbackContext context);
         void OnLoja(InputAction.CallbackContext context);
+        void OnSpeedRun(InputAction.CallbackContext context);
     }
 }
