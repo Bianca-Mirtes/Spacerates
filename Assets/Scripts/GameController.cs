@@ -78,7 +78,8 @@ public class GameController : MonoBehaviour
     public void computeAttackPlayer(GameObject enemy, int xp)
     {
         enemy.GetComponent<EnemyController>().setLife(danoPlayer);
-        player.GetComponent<PlayerController>().setXP(xp);
+        if(enemy.GetComponent<EnemyController>().getLife() <= 0)
+            player.GetComponent<PlayerController>().setXP(xp);
     }
 
     public void computeAttackEnemy(int dano)

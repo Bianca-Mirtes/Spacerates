@@ -977,7 +977,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 107217505}
-  - component: {fileID: 107217504}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -985,24 +984,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &107217504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107217503}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7f2ccc50341cb2489e65fac377b373a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  container: {fileID: 107217503}
-  objetos:
-  - {fileID: 4854142956924068191, guid: 87c19fe3b63af8e4385e426ebde9084c, type: 3}
-  total: 30
-  distanceBetween: 5
-  tamanhoMaximo: 8
 --- !u!4 &107217505
 Transform:
   m_ObjectHideFlags: 0
@@ -8563,6 +8544,8 @@ MonoBehaviour:
   objetos:
   - {fileID: 241709417751221008, guid: 9927959b2635d4f409e0e5de95c77d9f, type: 3}
   - {fileID: 2869936171926116570, guid: a2e34626a9219b748ae43164c08eb47c, type: 3}
+  min: 0
+  max: 0
   total: 70
   distanceBetween: 2
   tamanhoMaximo: 15
@@ -8666,6 +8649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 581717328}
   - component: {fileID: 581717327}
+  - component: {fileID: 581717329}
   m_Layer: 0
   m_Name: CombatController
   m_TagString: Untagged
@@ -8703,6 +8687,26 @@ Transform:
   - {fileID: 107217505}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &581717329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581717326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f2ccc50341cb2489e65fac377b373a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  container: {fileID: 107217503}
+  objetos:
+  - {fileID: 8054140702420205333, guid: 756b99595dce5d74d9d76415ac12f90f, type: 3}
+  min: 12
+  max: 16
+  total: 0
+  distanceBetween: 7
+  tamanhoMaximo: 4
 --- !u!1 &592188422
 GameObject:
   m_ObjectHideFlags: 0
@@ -14443,6 +14447,8 @@ MonoBehaviour:
   container: {fileID: 1401832937}
   objetos:
   - {fileID: 4854142956924068191, guid: 87c19fe3b63af8e4385e426ebde9084c, type: 3}
+  min: 0
+  max: 0
   total: 30
   distanceBetween: 5
   tamanhoMaximo: 8
@@ -16010,6 +16016,8 @@ MonoBehaviour:
   container: {fileID: 1569331273}
   objetos:
   - {fileID: 6474702414180637744, guid: 0922efcb4031fcd44a6c9cd79a909f89, type: 3}
+  min: 0
+  max: 0
   total: 10
   distanceBetween: 3
   tamanhoMaximo: 12

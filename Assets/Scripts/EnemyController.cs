@@ -72,6 +72,11 @@ public class EnemyController : MonoBehaviour
         return lvl;
     }
 
+    public float getLife()
+    {
+        return life.value;
+    }
+
     private void Dead()
     {
         // animação de morte
