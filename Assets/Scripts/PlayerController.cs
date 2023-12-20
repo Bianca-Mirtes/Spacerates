@@ -158,10 +158,22 @@ public class PlayerController : MonoBehaviour
         float horizontal = input.Player.MoveX.ReadValue<float>();
         float vertical = input.Player.MoveY.ReadValue<float>();
 
-        //right/left
-        rb.velocity = new Vector3(horizontal * speed, rb.velocity.y, 0f);
-        //top/down
-        rb.velocity = new Vector3(rb.velocity.x, vertical*speed, 0f);
+        if(horizontal != 0 && vertical != 0)
+        {
+            float diagonal = 0.8f;
+            //right/left
+            rb.velocity = new Vector3(horizontal * speed, rb.velocity.y, 0f) * diagonal;
+            //top/down
+            rb.velocity = new Vector3(rb.velocity.x, vertical * speed, 0f) * diagonal;
+        }
+        else
+        {
+            //right/left
+            rb.velocity = new Vector3(horizontal * speed, rb.velocity.y, 0f);
+            //top/down
+            rb.velocity = new Vector3(rb.velocity.x, vertical * speed, 0f);
+        }
+        
 
         if(horizontal> 0)
         {

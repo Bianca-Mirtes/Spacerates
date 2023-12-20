@@ -42,7 +42,13 @@ public class MenuController : MonoBehaviour
     }
     private void soundEffect(AudioClip audio)
     {
-        menuPainel.GetComponent<AudioSource>().PlayOneShot(audio);
+        AudioSource source = menuPainel.GetComponent<AudioSource>();
+        source.enabled = true;
+        if (source != null && source.enabled)
+        {
+            source.PlayOneShot(audio);
+        }
+        
     }
 
     private void updateSelectedBtn()
@@ -50,7 +56,10 @@ public class MenuController : MonoBehaviour
         GameObject currentObj = EventSystem.current.currentSelectedGameObject;
         if ((btnSelected != currentObj) && currentObj != null)
         {
-            soundEffect(moveSound);
+            if (moveSound != null)
+            {
+                soundEffect(moveSound);
+            }
             Button[] allButtons = FindObjectsOfType<Button>();
             foreach (Button button in allButtons)
             {
@@ -64,7 +73,6 @@ public class MenuController : MonoBehaviour
             btnSelected = EventSystem.current.currentSelectedGameObject;
             TextMeshProUGUI texto = btnSelected.GetComponentInChildren<TextMeshProUGUI>();
             texto.color = corDeSelecao;
-            //VFX de selecao de botao
         }
         if(currentObj == null)
             EventSystem.current.SetSelectedGameObject(btnSelected);

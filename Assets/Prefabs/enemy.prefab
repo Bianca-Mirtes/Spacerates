@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5803852081456470123
 RectTransform:
   m_ObjectHideFlags: 0
@@ -247,8 +247,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1.6}
+  m_SizeDelta: {x: 0, y: 3.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6396604556666148558
 CanvasRenderer:
@@ -321,8 +321,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0.019996643, y: 1.5999888}
+  m_SizeDelta: {x: -9.96, y: 3.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7171830937452766240
 GameObject:
@@ -534,7 +534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1027b8ccb4c760a47b377c4363165a3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser1: {fileID: 9206066640534269327, guid: 7e0aaa427760baf42a1bf1080690c5e4, type: 3}
   destinyRandow:
   - {fileID: 5093037256920251737, guid: 0cc3a94ec6f19c9488f3ff5784b648ad, type: 3}
   - {fileID: 7810843242115286766, guid: aa043ce8a4c6caa4c87277349d0c5014, type: 3}
@@ -543,6 +542,7 @@ MonoBehaviour:
   - {fileID: 4811248428466175999, guid: 03e5e691c11d66841bbd204231ef5032, type: 3}
   - {fileID: 7031325297409249077, guid: 03d0b3ad54a2be5448060a2567ab5bda, type: 3}
   spawner: {fileID: 3977762974916202627, guid: 4742e75b69003e04ca5ecaa53339dbac, type: 3}
+  laser1: {fileID: 9206066640534269327, guid: 7e0aaa427760baf42a1bf1080690c5e4, type: 3}
 --- !u!50 &3813174456556716920
 Rigidbody2D:
   serializedVersion: 4
@@ -551,7 +551,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8054140702420205333}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -569,7 +569,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &9210131564537967212
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -648,7 +648,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1994791670528167542}
   m_FillRect: {fileID: 81533475381304226}
   m_HandleRect: {fileID: 6044487397763974100}
