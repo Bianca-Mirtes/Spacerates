@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public GameObject background;
     public AudioClip backgroundSound;
     public CosmicDustController cosmicDustController;
+    public RadarController radarController;
     private float segundosParaPVP = 10.0f;
     private Transform player;
     private int danoPlayer = 20;
@@ -125,13 +126,13 @@ public class GameController : MonoBehaviour
     public void enableCosmicDust()
     {
         cosmicDustController.enableCosmicDust();
-        //desativar radar!
+        radarController.disableRadar();
     }
 
     public void disableCosmicDust()
     {
         cosmicDustController.disableCosmicDust();
-        //reativar radar!
+        radarController.enableRadar();
     }
 
     IEnumerator pvpOn()

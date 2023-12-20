@@ -422,7 +422,8 @@ public class PlayerController : MonoBehaviour
             {
                 //som de coleta
                 FindObjectOfType<GameController>().updateJewels(collision.gameObject.name);
-                Destroy(collision.gameObject);
+                GameObject asteroide = collision.gameObject.transform.parent.gameObject.transform.parent.gameObject;
+                Destroy(asteroide);
             }
         }
         if (collision.gameObject.layer == 8)
