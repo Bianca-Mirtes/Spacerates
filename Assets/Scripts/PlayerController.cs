@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
 
     public AudioClip laserSound;
 
+    public AudioClip moveSound;
+
     private Vector2 buracoNegro = Vector2.zero;
     private int lvl = 1;
     private float speedRun = 3;
@@ -180,6 +182,21 @@ public class PlayerController : MonoBehaviour
     {
         float horizontal = input.Player.MoveX.ReadValue<float>();
         float vertical = input.Player.MoveY.ReadValue<float>();
+
+        AudioSource audioMovimento = GetComponent<AudioSource>();
+        audioMovimento.clip = moveSound;
+        audioMovimento.volume = 0.2f;
+        audioMovimento.loop = true;
+
+        if(horizontal != 0 || vertical != 0) {
+            Debug.Log(audioMovimento.isPlaying);
+
+            if(!audioMovimento.isPlaying) {
+                audioMovimento.Play();
+            }
+        } else {
+            audioMovimento.Stop();
+        }
 
         if(horizontal != 0 && vertical != 0)
         {
