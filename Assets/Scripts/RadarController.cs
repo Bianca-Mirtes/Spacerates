@@ -5,6 +5,7 @@ using UnityEngine;
 public class RadarController : MonoBehaviour
 {
     public Transform position;
+    public Transform playerPosition;
     public PlayerController player;
     public Transform center;
     public GameObject asteroidsContainer;
@@ -20,10 +21,12 @@ public class RadarController : MonoBehaviour
     private float bgY;
     private Vector3 centroDoCirculo;
 
+    public HUDController HUDController;
+    float menorDistancia;
     // Start is called before the first frame update
     void Start()
     {
-        
+        menorDistancia = 0;
     }
 
     void Update()
@@ -46,6 +49,9 @@ public class RadarController : MonoBehaviour
         //asteroides
         asteroids.Clear();
         asteroids = captureChildren(asteroidsContainer);
+
+        GameObject asteroidProximo = null;
+
         foreach (Transform asteroid in asteroids)
         {
             if (asteroid.CompareTag("asteroid"))
@@ -55,8 +61,25 @@ public class RadarController : MonoBehaviour
                 Vector3 spawnPosition = new Vector3(x, y, 0f);
                 if(inside(spawnPosition))
                     Instantiate(pontos[0], spawnPosition, Quaternion.identity, radarContainer.transform);
+
+                if(menorDistancia == 0)
+                {
+                    asteroidProximo = asteroid.gameObject;
+                    menorDistancia = nextToPlayer(asteroid.localPosition);
+                }
+                else
+                {
+                    float distancia = nextToPlayer(asteroid.localPosition);
+                    if (distancia < menorDistancia && distancia < 6)
+                    {
+                        menorDistancia = distancia;
+                        asteroidProximo = asteroid.gameObject;
+                    }  
+                }
             }
         }
+        print(menorDistancia);
+        HUDController.setAsteroidStatus(asteroidProximo);
 
         //inimigos
         enemies.Clear();
@@ -100,6 +123,12 @@ public class RadarController : MonoBehaviour
         {
             return false;
         }
+    }
+
+    private float nextToPlayer(Vector3 pontoParaChecar)
+    {
+        float distancia = Vector3.Distance(playerPosition.localPosition, pontoParaChecar);
+        return distancia;
     }
 
     private List<Transform> captureChildren(GameObject container)

@@ -36,6 +36,9 @@ public class HUDController : MonoBehaviour
     public GameObject atalhos;
     public ShopController shopController;
 
+    public Image asteroideStts;
+    public TextMeshProUGUI asteroideStts1;
+    public TextMeshProUGUI asteroideStts2;
     // Start is called before the first frame update
     void Start()
     {
@@ -164,6 +167,49 @@ public class HUDController : MonoBehaviour
     public void desligarAtalhos()
     {
         atalhos.gameObject.SetActive(false);
+    }
+
+    public void setAsteroidStatus(GameObject asteroid)
+    {
+        if(asteroid != null)
+        {
+            asteroideStts.gameObject.SetActive(true);
+            asteroideStts1.gameObject.SetActive(true);
+            asteroideStts2.gameObject.SetActive(true);
+
+            string stts1 = "";
+            string stts2 = "";
+
+            int raridade = asteroid.GetComponent<AsteroidController>().getRaridade();
+            if (raridade == 1)
+            {
+                stts1 = "comum";
+                stts2 = "Altas chacnes de ser uma ágata";
+            }
+            else if (raridade == 2)
+            {
+                stts1 = "incomum";
+                stts2 = "";
+            }
+            else if (raridade == 3)
+            {
+                stts1 = "raro";
+                stts2 = "50% de chance de esmeralda";
+            }
+            else if (raridade == 4)
+            {
+                stts1 = "super raro";
+                stts2 = "Boas chances de ser um diamante";
+            }
+            asteroideStts1.text = "Asteroide "+stts1;
+            asteroideStts2.text = stts2;
+        }
+        else
+        {
+            asteroideStts.gameObject.SetActive(false);
+            asteroideStts1.gameObject.SetActive(false);
+            asteroideStts2.gameObject.SetActive(false);
+        }
     }
 
     public void pvpOn()

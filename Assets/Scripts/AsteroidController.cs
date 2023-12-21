@@ -10,6 +10,7 @@ public class AsteroidController : MonoBehaviour
     public GameObject gema4;
 
     private Animator ani;
+    private int raridade;
 
     // Start is called before the first frame update
     void Start()
@@ -37,18 +38,22 @@ public class AsteroidController : MonoBehaviour
         if (rarity >= 1 && rarity <= 55)
         {
             spwanGem(1, 70, 95, 99);
+            raridade = 1;
         }
         else if (rarity >= 56 && rarity <= 80)
         {
             spwanGem(2, 55, 85, 95);
+            raridade = 2;
         }
         else if (rarity >= 81 && rarity <= 95)
         {
             spwanGem(3, 20, 40, 90);
+            raridade = 3;
         }
         else
         {
             spwanGem(4, 10, 25, 60);
+            raridade = 4;
         }
     }
 
@@ -71,6 +76,11 @@ public class AsteroidController : MonoBehaviour
         {
             gema4.SetActive(true);
         }
+    }
+
+    public int getRaridade()
+    {
+        return raridade;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
