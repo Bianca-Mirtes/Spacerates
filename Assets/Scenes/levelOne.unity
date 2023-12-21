@@ -2435,8 +2435,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agata: {fileID: 1718171845}
   ametista: {fileID: 2021935903}
-  diamante: {fileID: 1161387303}
-  esmeralda: {fileID: 933659484}
+  diamante: {fileID: 933659484}
+  esmeralda: {fileID: 1161387303}
   vida: {fileID: 1923684846}
   carga: {fileID: 1118436985}
   nivel: {fileID: 1872578940}
@@ -2452,7 +2452,7 @@ MonoBehaviour:
   branco: {r: 1, g: 1, b: 1, a: 1}
   escuro: {r: 0.47084048, g: 0.45990565, b: 0.5, a: 1}
   atalhos: {fileID: 158293791}
-  shopController: {fileID: 0}
+  shopController: {fileID: 1007157349}
   asteroideStts: {fileID: 680133941}
   asteroideStts1: {fileID: 1199489776}
   asteroideStts2: {fileID: 972937549}
@@ -8946,7 +8946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &581717327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9885,7 +9885,7 @@ GameObject:
   - component: {fileID: 680133941}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: HUD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9908,8 +9908,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 746, y: -211}
-  m_SizeDelta: {x: 455, y: 97}
+  m_AnchoredPosition: {x: 746, y: -176.4}
+  m_SizeDelta: {x: 455, y: 177}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &680133941
 MonoBehaviour:
@@ -12469,7 +12469,7 @@ GameObject:
   - component: {fileID: 972937549}
   m_Layer: 5
   m_Name: Text (TMP) (1)
-  m_TagString: Untagged
+  m_TagString: HUD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12490,8 +12490,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100.8, y: -24.2}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 6.7316, y: 11}
+  m_SizeDelta: {x: 415.0634, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &972937549
 MonoBehaviour:
@@ -12513,7 +12513,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Chance..
+  m_text: "\xC1gatas - 70%\r\nAmetistas - 25%\r\nEsmeraldas - 4%\r\nDiamantes - 1%\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d42738955fd3e674592b227aea1c09a9, type: 2}
   m_sharedMaterial: {fileID: 7201739424206362684, guid: d42738955fd3e674592b227aea1c09a9, type: 2}
@@ -14017,7 +14017,7 @@ GameObject:
   - component: {fileID: 1199489776}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: HUD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14038,8 +14038,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -101.6, y: 6.6}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 6.3316, y: 41.79998}
+  m_SizeDelta: {x: 415.86, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1199489776
 MonoBehaviour:
@@ -15933,7 +15933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: {fileID: 519420032}
-  playerPosition: {fileID: 593884690}
+  playerPosition: {fileID: 593884687}
   player: {fileID: 593884692}
   center: {fileID: 1658468105}
   asteroidsContainer: {fileID: 577963517}
@@ -19750,11 +19750,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 81533475381304226, guid: 756b99595dce5d74d9d76415ac12f90f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 81533475381304226, guid: 756b99595dce5d74d9d76415ac12f90f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3587117903421366909, guid: 756b99595dce5d74d9d76415ac12f90f, type: 3}
       propertyPath: m_Value
