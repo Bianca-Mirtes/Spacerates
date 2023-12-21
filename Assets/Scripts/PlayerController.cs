@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Input input;
     private string statusPlayer = "right";
-    private float timeBetween = 2f;
+    private float timeBetween = 1.25f;
     private Animator ani;
     private bool direcaoHorizontal = true;
     private bool canAttack = true;
