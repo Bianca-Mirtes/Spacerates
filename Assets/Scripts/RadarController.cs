@@ -5,7 +5,7 @@ using UnityEngine;
 public class RadarController : MonoBehaviour
 {
     public Transform position;
-    public Transform playerPosition;
+    public GameObject playerPosition;
     public PlayerController player;
     public Transform center;
     public GameObject asteroidsContainer;
@@ -52,6 +52,7 @@ public class RadarController : MonoBehaviour
 
         GameObject asteroidProximo = null;
 
+        menorDistancia = 0;
         foreach (Transform asteroid in asteroids)
         {
             if (asteroid.CompareTag("asteroid"))
@@ -70,7 +71,7 @@ public class RadarController : MonoBehaviour
                 else
                 {
                     float distancia = nextToPlayer(asteroid.localPosition);
-                    if (distancia < menorDistancia && distancia < 6)
+                    if (distancia < menorDistancia)
                     {
                         menorDistancia = distancia;
                         asteroidProximo = asteroid.gameObject;
@@ -78,8 +79,7 @@ public class RadarController : MonoBehaviour
                 }
             }
         }
-        print(menorDistancia);
-        HUDController.setAsteroidStatus(asteroidProximo);
+        HUDController.setAsteroidStatus(asteroidProximo, menorDistancia);
 
         //inimigos
         enemies.Clear();
@@ -127,7 +127,7 @@ public class RadarController : MonoBehaviour
 
     private float nextToPlayer(Vector3 pontoParaChecar)
     {
-        float distancia = Vector3.Distance(playerPosition.localPosition, pontoParaChecar);
+        float distancia = Vector3.Distance(playerPosition.transform.localPosition, pontoParaChecar);
         return distancia;
     }
 

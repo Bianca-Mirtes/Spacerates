@@ -32,8 +32,14 @@ public class EnemyController : MonoBehaviour
     private Vector3 localSpawn3;
     private Vector3 localSpawn4;
 
+    private Transform right;
+    private Transform up;
+    private Transform down;
+    private Transform left;
+
     public GameObject spawner;
     public GameObject laser1;
+    public AudioClip laserSound;
 
     private int lvl;
     // Start is called before the first frame update
@@ -43,6 +49,12 @@ public class EnemyController : MonoBehaviour
         //ani = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         AIPointCurrent = Random.Range(0, destinyRandow.Length);
+
+        up = GameObject.Find("up").transform;
+        down = GameObject.Find("down").transform;
+        left = GameObject.Find("left").transform;
+        right = GameObject.Find("right").transform;
+
         Instantiate(spawner, new Vector3(transform.position.x + 0.3f, transform.position.y - 0.2f, transform.position.z), Quaternion.identity);
         Instantiate(spawner, new Vector3(transform.position.x - 0.3f, transform.position.y - 0.2f, transform.position.z), Quaternion.identity);
         Instantiate(spawner, new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z), Quaternion.identity);
@@ -94,9 +106,8 @@ public class EnemyController : MonoBehaviour
         }
         coordX = player.transform.position.x;
         coordY = player.transform.position.y;
-        status = opcoes[Random.Range(0, 4)];
+
         UpdatePositionSpawners();
-        verifAttack();
         verifTimeForAttack();
         distanceForPlayer = Vector3.Distance(player.transform.position, transform.position);
         distanceForAIPoint = Vector3.Distance(destinyRandow[AIPointCurrent].transform.position, transform.position);
@@ -107,7 +118,7 @@ public class EnemyController : MonoBehaviour
         }
         if (distanceForPlayer <= distanceFollow) // para verificar se o inimigo pode seguir o player
         {
-            //ani.SetBool("walking1", true);
+            verifAttack();
             Follow();
             followSomething = true;
         }
@@ -130,27 +141,50 @@ public class EnemyController : MonoBehaviour
     {
         if (canAttack)
         {
-            if (status.Equals("right") && (coordX > Mathf.Abs(transform.position.x) && coordY == Mathf.Abs(transform.position.y)))
+            if (coordY < transform.position.y)
             {
-                GameObject clone = Instantiate(laser1, localSpawn1, Quaternion.identity);
-                clone.GetComponent<LaserController>().setDirection(0);
-            }
-            else if (status.Equals("left") && (coordX < Mathf.Abs(transform.position.x) && coordY == Mathf.Abs(transform.position.y)))
+                GameObject clone = Instantiate(laser1, localSpawn4, down.rotation);
+                clone.GetComponent<LaserController>().setDirection(3);
+            }else if (coordY > Mathf.Abs(transform.position.y))
             {
-                GameObject clone = Instantiate(laser1, localSpawn2, Quaternion.identity);
-                clone.GetComponent<LaserController>().setDirection(1);
-            }
-            else if (status.Equals("up") && (coordX == Mathf.Abs(transform.position.x) && coordY > Mathf.Abs(transform.position.y)))
-            {
-                GameObject clone = Instantiate(laser1, localSpawn3, Quaternion.identity);
+                GameObject clone = Instantiate(laser1, localSpawn3, up.rotation);
                 clone.GetComponent<LaserController>().setDirection(2);
                 clone.transform.Rotate(new Vector3(0f, 0f, 90f));
-            }
-            else if (status.Equals("down") && (coordX == Mathf.Abs(transform.position.x) && coordY < Mathf.Abs(transform.position.y)))
+            }else if (coordX > Mathf.Abs(transform.position.x))
             {
-                GameObject clone = Instantiate(laser1, localSpawn4, Quaternion.identity);
-                clone.GetComponent<LaserController>().setDirection(3);
+                GameObject clone = Instantiate(laser1, localSpawn1, right.rotation);
+                clone.GetComponent<LaserController>().setDirection(0);
+            }else if (coordX < Mathf.Abs(transform.position.x))
+            {
+                GameObject clone = Instantiate(laser1, localSpawn2, right.rotation);
+                clone.GetComponent<LaserController>().setDirection(1);
             }
+            else
+            {
+                status = opcoes[Random.Range(0, 4)];
+                if (status.Equals("right"))
+                {
+                    GameObject clone = Instantiate(laser1, localSpawn1, right.rotation);
+                    clone.GetComponent<LaserController>().setDirection(0);
+                }
+                else if (status.Equals("left"))
+                {
+                    GameObject clone = Instantiate(laser1, localSpawn2, right.rotation);
+                    clone.GetComponent<LaserController>().setDirection(1);
+                }
+                else if (status.Equals("up"))
+                {
+                    GameObject clone = Instantiate(laser1, localSpawn3, up.rotation);
+                    clone.GetComponent<LaserController>().setDirection(2);
+                    clone.transform.Rotate(new Vector3(0f, 0f, 90f));
+                }
+                else if (status.Equals("down"))
+                {
+                    GameObject clone = Instantiate(laser1, localSpawn4, down.rotation);
+                    clone.GetComponent<LaserController>().setDirection(3);
+                }
+            }
+            GetComponent<AudioSource>().PlayOneShot(laserSound);
             canAttack = false;
         }
     }

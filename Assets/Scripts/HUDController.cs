@@ -169,10 +169,15 @@ public class HUDController : MonoBehaviour
         atalhos.gameObject.SetActive(false);
     }
 
-    public void setAsteroidStatus(GameObject asteroid)
+    public void setAsteroidStatus(GameObject asteroid, float distancia)
     {
-        if(asteroid != null)
+        if(asteroid != null && distancia < 6)
         {
+            if (IsInvoking("desativaStts"))
+            {
+                CancelInvoke("desativaStts");
+            }
+
             asteroideStts.gameObject.SetActive(true);
             asteroideStts1.gameObject.SetActive(true);
             asteroideStts2.gameObject.SetActive(true);
@@ -184,32 +189,37 @@ public class HUDController : MonoBehaviour
             if (raridade == 1)
             {
                 stts1 = "comum";
-                stts2 = "Altas chacnes de ser uma ágata";
+                stts2 = "Ágatas - 70%\nAmetistas - 25%\nEsmeraldas - 4%\nDiamantes - 1%";
             }
             else if (raridade == 2)
             {
                 stts1 = "incomum";
-                stts2 = "";
+                stts2 = "Ágatas - 55%\nAmetistas - 30%\nEsmeraldas - 10%\nDiamantes - 5%";
             }
             else if (raridade == 3)
             {
                 stts1 = "raro";
-                stts2 = "50% de chance de esmeralda";
+                stts2 = "Ágatas - 20%\nAmetistas - 20%\n Esmeraldas - 50%\nDiamantes - 10%";
             }
             else if (raridade == 4)
             {
                 stts1 = "super raro";
-                stts2 = "Boas chances de ser um diamante";
+                stts2 = "Ágatas - 10%\nAmetistas - 15%\nEsmeraldas - 35%\nDiamantes - 40%";
             }
             asteroideStts1.text = "Asteroide "+stts1;
             asteroideStts2.text = stts2;
         }
         else
         {
-            asteroideStts.gameObject.SetActive(false);
-            asteroideStts1.gameObject.SetActive(false);
-            asteroideStts2.gameObject.SetActive(false);
+            Invoke("desativaStts", 0.5f);
         }
+    }
+
+    private void desativaStts()
+    {
+        asteroideStts.gameObject.SetActive(false);
+        asteroideStts1.gameObject.SetActive(false);
+        asteroideStts2.gameObject.SetActive(false);
     }
 
     public void pvpOn()

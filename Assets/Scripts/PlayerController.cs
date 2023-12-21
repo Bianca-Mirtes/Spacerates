@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Input input;
     private string statusPlayer = "right";
-    private float timeBetween = 2f;
+    private float timeBetween = 1.25f;
     private Animator ani;
     private bool direcaoHorizontal = true;
     private bool canAttack = true;
@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private int esmeraldaQtdd = 0;
 
     public AudioClip laserSound;
+    public AudioClip[] collectSound;
 
     public AudioClip moveSound;
 
@@ -543,6 +544,7 @@ public class PlayerController : MonoBehaviour
         {
             if (input.Player.Coleta.IsPressed() && coletaEnable)
             {
+                collision.gameObject.GetComponent<AudioSource>().PlayOneShot(collectSound[Random.Range(0, 2)]);
                 //som de coleta
                 FindObjectOfType<GameController>().updateJewels(collision.gameObject.name);
                 GameObject asteroide = collision.gameObject.transform.parent.gameObject.transform.parent.gameObject;
