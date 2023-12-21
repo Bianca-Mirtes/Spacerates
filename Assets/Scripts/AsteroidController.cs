@@ -21,6 +21,7 @@ public class AsteroidController : MonoBehaviour
         gema4.SetActive(false);
 
         ani = GetComponent<Animator>();
+        setRarityAsteroid();
     }
 
     // Update is called once per frame
@@ -37,23 +38,39 @@ public class AsteroidController : MonoBehaviour
         int rarity = Random.Range(1, 101);
         if (rarity >= 1 && rarity <= 55)
         {
-            spwanGem(1, 70, 95, 99);
             raridade = 1;
         }
         else if (rarity >= 56 && rarity <= 80)
         {
-            spwanGem(2, 55, 85, 95);
             raridade = 2;
         }
         else if (rarity >= 81 && rarity <= 95)
         {
-            spwanGem(3, 20, 40, 90);
             raridade = 3;
         }
         else
         {
-            spwanGem(4, 10, 25, 60);
             raridade = 4;
+        }
+    }
+
+    public void setRarityPercentAsteroid()
+    {
+        if (raridade == 1)
+        {
+            spwanGem(1, 70, 95, 99);
+        }
+        else if (raridade == 2)
+        {
+            spwanGem(2, 55, 85, 95);
+        }
+        else if (raridade == 3)
+        {
+            spwanGem(3, 20, 40, 90);
+        }
+        else
+        {
+            spwanGem(4, 10, 25, 60);
         }
     }
 
