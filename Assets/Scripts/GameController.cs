@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
     private int countPink = 0;
 
     private static GameController intance = null;
+    private bool isPvp = false;
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +65,7 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene(2);
         }
 
-        if (combatController.getPlayersNum() == 0)
+        if (combatController.getPlayersNum() == 0 && isPvp)
         {
             SceneManager.LoadScene(3);
         }
@@ -165,6 +166,7 @@ public class GameController : MonoBehaviour
         //marca o tempo pro inicio do PVP
         yield return new WaitForSeconds(segundosParaPVP);
         HUDController.pvpOn();
+        isPvp = true;
         //VFX de inicio de PVP
     }
 }
