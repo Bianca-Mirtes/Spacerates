@@ -3939,15 +3939,13 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
+  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
-  m_UseCustomTrailVertexStreams: 0
-  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -9212,9 +9210,13 @@ MonoBehaviour:
   laser1: {fileID: 9206066640534269327, guid: 5cee9be58ec348846b047ba9a5a5f87c, type: 3}
   speed: 3
   laserSound: {fileID: 8300000, guid: 2badbc16d27f9a0429f802741b5edfdb, type: 3}
+<<<<<<< HEAD
+  moveSound: {fileID: 8300000, guid: b5f65dac0a0d8c859957f5295a0483e7, type: 3}
+=======
   collectSound:
   - {fileID: 8300000, guid: bdcd0017d9095b641bbba1d15cb88909, type: 3}
   - {fileID: 8300000, guid: fd4976302f01138449c7eb118ca426fb, type: 3}
+>>>>>>> 65fe72e01f62d10fa986bdc3efef7c879dba686d
   velocidadeEspecial: 3.5
 --- !u!95 &593884694
 Animator:
