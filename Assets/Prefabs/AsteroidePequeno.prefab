@@ -126,8 +126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gema1: {fileID: 6921724177068813939}
   gema2: {fileID: 888150813008737574}
-  gema3: {fileID: 1736689999150855462}
-  gema4: {fileID: 1482383016634252717}
+  gema3: {fileID: 1482383016634252717}
+  gema4: {fileID: 1736689999150855462}
 --- !u!58 &-2316309328926662928
 CircleCollider2D:
   m_ObjectHideFlags: 0

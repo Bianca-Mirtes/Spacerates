@@ -118,18 +118,19 @@ public class GameController : MonoBehaviour
             playerController.setCargaAtual(15);
             playerController.setXP(15);
         }
-        if (joia.Equals("Diamante"))
+        if (joia.Equals("Esmeralda"))
         {
             playerController.addGema(3);
             playerController.setCargaAtual(20);
             playerController.setXP(20);
         }
-        if (joia.Equals("Esmeralda"))
+        if (joia.Equals("Diamante"))
         {
             playerController.addGema(4);
             playerController.setCargaAtual(25);
             playerController.setXP(25);
         }
+        
     }
 
     public void nextLvl()

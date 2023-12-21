@@ -262,8 +262,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gema1: {fileID: 7941845525331489295}
   gema2: {fileID: 6872620605147665754}
-  gema3: {fileID: 3802532102193688716}
-  gema4: {fileID: 185087901373400225}
+  gema3: {fileID: 185087901373400225}
+  gema4: {fileID: 3802532102193688716}
 --- !u!50 &-8839599077095563888
 Rigidbody2D:
   serializedVersion: 4
