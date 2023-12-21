@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private int esmeraldaQtdd = 0;
 
     public AudioClip laserSound;
+    public AudioClip[] collectSound;
 
     private Vector2 buracoNegro = Vector2.zero;
     private int lvl = 1;
@@ -526,6 +527,7 @@ public class PlayerController : MonoBehaviour
         {
             if (input.Player.Coleta.IsPressed() && coletaEnable)
             {
+                collision.gameObject.GetComponent<AudioSource>().PlayOneShot(collectSound[Random.Range(0, 2)]);
                 //som de coleta
                 FindObjectOfType<GameController>().updateJewels(collision.gameObject.name);
                 GameObject asteroide = collision.gameObject.transform.parent.gameObject.transform.parent.gameObject;
